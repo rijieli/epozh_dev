@@ -27,7 +27,7 @@ title: {title}
 date: {date}
 categories: 
 ---
-# {title}
+
 '''.format(title=title.replace('-', ' ').capitalize(), date=post_date)
 
 # if we're in a jekyll root, pop it in ./_posts

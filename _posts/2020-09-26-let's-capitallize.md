@@ -4,7 +4,6 @@ title: Let's capitallize
 date: 2020-09-26 18:40:39 +0800
 categories: 文章 应用
 ---
-# Let's capitallize
 
 Markdown Cheatsheet
 ===================

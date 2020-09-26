@@ -4,7 +4,6 @@ title: 中文标题文章效果测试
 date: 2020-09-26 18:38:31 +0800
 categories: data algorithm
 ---
-# new version of creating
 
 Markdown Cheatsheet
 ===================
