@@ -1,0 +1,48 @@
+---
+layout: default
+title: 作品
+permalink: /works/
+current_page_platform: all
+header_index: 1
+---
+
+<script>
+    document.querySelector("#header_idx_{{page.header_index}}").style.color = "#3D3D3D"
+</script>
+
+<div style="text-align: center; height: 60px; margin:0px 0px 0px 10px;">
+    <ul style="display: inline; line-height: 60px; margin: 0;">
+        <li style="list-style: none; display: inline; margin: 10px; font-size: 15px; text-align: center;">
+            <a style="color: #3d3d3d; text-decoration: none; font-weight: bold;" href="/works/">所有</a>
+        </li>
+        {% assign work_platforms =  site.data.works | map: "platform" | compact | uniq %}
+        {% for platform in work_platforms %}
+        {% assign platform_detail = site.data.works_category | where: "platform",platform | first %}
+        <li style="list-style: none; display: inline; margin: 10px; font-size: 15px; text-align: center;">
+            {% if platform == page.current_page_platform %}
+            <a style="color: #3d3d3d; text-decoration: none; font-weight: bold;"
+                href="/works/{{platform}}">{{ platform_detail.name | capitalize }}</a>
+            {% else %}
+            <a style="color: #7a7a7a; text-decoration: none;" href="/works/{{platform}}">{{ platform_detail.name | capitalize }}</a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div style="display: block; float: none; line-height: 24px; margin: 0px; padding: 0px;">
+    <ol
+        style="margin: 0px; display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: minmax(100px, auto);column-gap: 20px; list-style-type: none; vertical-align: baseline; row-gap: 20px; position: relative;">
+        {% for item in site.data.works %}
+        {%- if item.platform == page.current_page_platform or page.current_page_platform == "all" -%}
+        <li id="workitem-{{item.id}}"
+            style="padding: 10px; border: 1px #999 solid;display: list-item; vertical-align: baseline; width: 200px;">
+            <a href="{{ item.url }}">{{item.title}}</a>
+            <p> {{ item.visit }} | {{ item.platform }}</p>
+            <p>{{ item.date | date: "%Y 年 %m 月 %d 日"}}</p>
+            <img style="padding: 0px;" src="{{ item.img_path }}" alt="">
+        </li>
+        {%- endif -%}
+        {% endfor %}
+    </ol>
+</div>
