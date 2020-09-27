@@ -1,33 +1,46 @@
 ---
 layout: default
-title: 文章
-permalink: /articles/
-header_index: 2
+header_index: 1
+permalink: /blog/
+title: 博客
 ---
 
 <script>
   document.querySelector("#header_idx_{{page.header_index}}").style.color = "#3D3D3D"
 </script>
 
-<div class="home">
+<div class="articles post">
 
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-      </li>
-      {%- endfor -%}
-    </ul>
-
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  <ul class="post-list">
+    {%- for post in site.posts -%}
+    <li>
+      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+      <span class="post-meta">{{ post.date | date: date_format }}</span>
+      <h3>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </h3>
+    </li>
+    {%- endfor -%}
+  </ul>
   {%- endif -%}
 
 </div>
+
+{% capture sidebar_content %}
+<div class="category" style="font-size: 14px;text-align: left; background-color: #f5f5f5;padding: 10px 0px;">
+  <p style="margin: 10px 0px; padding: 0px 15px;">Category</p>
+  <ul style="list-style: none; margin: 0px 0px; padding: 0px;">
+    <li style="margin: 5px 0px; padding: 5px 15px;background-color: #dee8f6; border-right:5px #1576ff solid;"><a style="color: #1576ff;" href="">全部</a></li>
+    {%- for category in site.categories -%}
+    <li style="margin: 5px 0px; padding: 5px 15px;"><a href="">{{ category | first | capitalize }}</a></li>
+    {%- endfor -%}
+  </ul>
+</div>
+
+
+{% endcapture %}
+
+{%- include sidebar.html sidebar_content=sidebar_content -%}
