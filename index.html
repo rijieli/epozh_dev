@@ -4,12 +4,87 @@ title: 主页
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Epozh</title>
-</head>
-<body style="background-color: aquamarine;">
-    
+{%- include head.html -%}
+
+<style>
+    .index-gradient {
+        background: rgb(6, 59, 165);
+        background: linear-gradient(45deg, rgba(6, 59, 165, 1) 0%, rgba(46, 141, 255, 1) 100%);
+    }
+
+    .index-icon {
+        position: fixed;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 25%;
+        text-align: center;
+    }
+
+    .sns-list {
+        line-height: 60px;
+        width: 780px;
+        height: 88px;
+        background: rgba(255, 255, 255, 0.30);
+        border-radius: 43.5px;
+        position: fixed;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 60%;
+        text-align: center;
+    }
+
+    .sns-list-item {
+        list-style: none;
+        display: inline;
+        line-height: 88px;
+        margin-right: 50px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .sns-list-item:last-child {
+        margin-right: 0;
+    }
+
+    .sns-list-item a {
+        text-decoration: none;
+    }
+</style>
+
+<body class="index-gradient">
+    <div style="padding:0px; margin:0px;">
+        <div class="index-icon">
+            <img src="{{ "/assets/img/epozh.svg" | relative_url }}" alt="">
+        </div>
+        <ul class="sns-list">
+            {% for platform in site.data.works_category %}
+            {% if platform.url != nil %}
+            <li class="sns-list-item">
+                {% if jekyll.enviroment == "production" %}
+                <a href="" target="_blank">
+                    <img style="color: #fff; text-decoration: none;"
+                        src="{{ "/assets/img/sns_icon/"| append: platform.platform | append: "-round.svg" | relative_url }}"
+                        alt="">
+                </a>
+                {% else %}
+                <a href="{{platform.url | relative_url }}" target="_blank">
+                    <img style="color: #fff; text-decoration: none;"
+                        src="{{ "/assets/img/sns_icon/"| append: platform.platform | append: "-round.svg" | relative_url }}"
+                        alt="">
+                </a>
+                {% endif %}
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div
+        style="display:block; position: fixed; left: 0;right: 0;bottom: 0px;padding:0px; margin:0px;text-align: right; height: 30px;background-color: rgba(0, 0, 0, 0.3);">
+        <p style="font-size: 12px; line-height: 30px; color: aliceblue; padding-right: 15px;">Copyright © 2017-2020
+            RIJIE.</p>
+    </div>
 </body>
+
 </html>
