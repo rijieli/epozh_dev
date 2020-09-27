@@ -31,8 +31,9 @@ github_username:  jekyll
 
 # Build settings
 # theme: minima
-plugins:
-  - jekyll-feed
+
+# plugins:
+#  - jekyll-feed
 #  - jekyll-seo-tag
 
 # generate and show post excerpts
