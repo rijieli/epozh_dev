@@ -12,7 +12,8 @@ layout: default
       </time>
       <span>Words: {{ page.content | number_of_words: "cjk" }}</span>
       {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
+          itemprop="name">{{ page.author }}</span></span>
       {%- endif -%}</p>
   </header>
 
@@ -21,8 +22,18 @@ layout: default
   </div>
 
   {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
+  {%- include disqus_comments.html -%}
   {%- endif -%}
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
+
+<div class="post-sidebar" style="display: block; position: fixed; top: 106px">
+  <div clas="share-sidebar">
+    <button> Share </button>
+  </div>
+  <div style="display: flex; flex-direction: column;">
+    <h2>Contents</h2>
+    {%- include toc.html html=content h_min=2 h_max=2 class='toc-sidebar' item_class='toc-sidebar-item' -%}
+  </div>
+</div>

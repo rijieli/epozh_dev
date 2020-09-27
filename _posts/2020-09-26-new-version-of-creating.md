@@ -5,6 +5,8 @@ date: 2020-09-26 18:38:31 +0800
 categories: data algorithm
 ---
 
+![Local](/assets/img/works/1.jpg)
+
 Markdown Cheatsheet
 ===================
 
