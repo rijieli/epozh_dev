@@ -39,7 +39,8 @@ header_index: 2
             style="padding: 10px; border: 1px #999 solid;display: list-item; vertical-align: baseline; width: 200px;">
             <a href="{{ item.url }}">{{item.title}}</a>
             <p> {{ item.visit }} | {{ item.platform }}</p>
-            <p>{{ item.date | date: "%Y 年 %m 月 %d 日"}}</p>
+            {%- assign date_format = site.data_formats.date_format | default: "%b %-d, %Y" -%}
+            <p>{{ item.date | date: date_format }}</p>
             <img style="padding: 0px;" src="{{ item.img_path }}" alt="">
         </li>
         {%- endif -%}
