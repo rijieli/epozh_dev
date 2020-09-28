@@ -1,3 +1,88 @@
+/** 
+ * Site index style
+ */
+
+.index-page {
+  background: rgb(6, 59, 165);
+  background: linear-gradient(45deg, rgba(6, 59, 165, 1) 0%, rgba(46, 141, 255, 1) 100%);
+
+  padding:0px; 
+  margin:0px;
+
+  .index-icon {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 20%;
+    top: 25%;
+    text-align: center;
+  }
+
+  .sns-list {
+    line-height: 60px;
+    height: 88px;
+    background: rgba(255, 255, 255, 0.30);
+    border-radius: 43.5px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 20%;
+    top: 60%;
+    text-align: center;
+
+    li {
+      list-style: none;
+      display: inline;
+      line-height: 88px;
+      margin-right: 50px;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    li:last-child {
+      margin-right: 0;
+    }
+
+    li a {
+      text-decoration: none;
+    }
+
+}
+
+  @include media-query($on-palm) {
+
+    .sns-list {
+        margin: 0 15%;
+    }
+
+    .sns-list li {
+        margin-right: 20px;
+    }
+  }
+
+  .footer {
+    display:block; 
+    position: fixed; 
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    padding:0px; 
+    margin:0px;
+    text-align: right; 
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    p {
+      font-size: 12px; 
+      line-height: 30px;
+      color: aliceblue; 
+      padding-right: 15px;
+    }
+  }
+
+}
+
+
 /**
  * Site header
  */
