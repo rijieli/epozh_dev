@@ -62,7 +62,7 @@ title: 主页
             {% for platform in site.data.works_category %}
             {% if platform.url != nil %}
             <li class="sns-list-item">
-                {% if jekyll.enviroment == "production" %}
+                {% if jekyll.environment == "production" %}
                 <a href="" target="_blank">
                     <img style="color: #fff; text-decoration: none;"
                         src="{{ "/assets/img/sns_icon/"| append: platform.platform | append: "-round.svg" | relative_url }}"
