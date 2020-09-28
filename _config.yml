@@ -20,8 +20,7 @@
 
 title: RIJIE
 email: rijie.li@outlook.com
-description: >- # this means to ignore newlines until "baseurl:"
-For serve.
+description: For serve.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https//epozh.cn/"
 
@@ -47,6 +46,11 @@ header_pages:
   - subpage/works.html
   - subpage/projects.html
   - subpage/about.html
+
+exclude:
+  - newpost.py
+  - CNAME
+  - .gitignore
 
 # Exclude from processing.
 # The following items will not be processed, by default.
