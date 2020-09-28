@@ -22,7 +22,7 @@ title: 主页
             {% else %}
             <a href="{{platform.url | relative_url }}" target="_blank">
                 <img src="{{ "/assets/img/sns_icon/"| append: platform.platform | append: "-round.svg" | relative_url }}"
-                    alt="">
+                    alt=""><span class="tooltip">{{ platform.name }}</span>
             </a>
             {% endif %}
         </li>
