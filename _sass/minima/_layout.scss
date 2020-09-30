@@ -140,7 +140,7 @@
 .site-header {
   // border-top: 5px solid $grey-color-dark;
   border-bottom: 1px solid $grey-color-light;
-  min-height: $spacing-unit * 1.865;
+  min-height: 54px;
 
   // Positioning context for the mobile navigation icon
   position: relative;
@@ -179,15 +179,27 @@
 
   .page-link {
     // color: $text-color;
-    color: #7A7A7A;
+    color: #999;
     line-height: $base-line-height;
     font-weight: bold;
     letter-spacing: 1px;
+    display: inline-block;
+    line-height: 54px;
+    height: 54px;
+    box-sizing: border-box;
+    padding: 0px 1px;
+
+    text-decoration: none;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
       margin-right: 20px;
     }
+  }
+
+  .page-link.current {
+    color: #2B65D9;
+    border-bottom: 3px solid #2B65D9;
   }
 
   @include media-query($on-palm) {
