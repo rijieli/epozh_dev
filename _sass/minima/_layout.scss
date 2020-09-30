@@ -181,6 +181,8 @@
     // color: $text-color;
     color: #7A7A7A;
     line-height: $base-line-height;
+    font-weight: bold;
+    letter-spacing: 1px;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
@@ -393,5 +395,62 @@
     @include media-query($on-laptop) {
       @include relative-font-size(1.125);
     }
+  }
+}
+
+/** 
+ * Sidebar Define Here
+ */
+
+.sidebar {
+  display: block; 
+  position: fixed; 
+  top: 100px;
+  width: 120px;
+  text-overflow: clip;
+  
+  .sidebar-content {
+  display: flex; 
+  flex-direction: column;
+  }
+
+  @include media-query($on-laptop) {
+    visibility: hidden;
+  }
+
+  .sidebar-category {
+    font-size: 14px;
+    text-align: left; 
+    background-color: #f5f5f5;
+    padding: 10px 0px;
+
+    .category-header {
+      margin: 10px 0px; 
+      padding: 0px 15px;
+    }
+
+    .category-list {
+      list-style: none; margin: 0px 0px; padding: 0px;
+    }
+
+    .category-item {
+      margin: 5px 0px; 
+      padding: 5px 15px;
+    
+      .category-item-link {
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+
+    .category-item.current {
+      background-color: #dee8f6; 
+      border-right:5px #1576ff solid;
+      color: #1576ff;
+    }
+
+
   }
 }

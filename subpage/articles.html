@@ -30,12 +30,12 @@ title: 博客
 </div>
 
 {% capture sidebar_content %}
-<div class="category" style="font-size: 14px;text-align: left; background-color: #f5f5f5;padding: 10px 0px;">
-  <p style="margin: 10px 0px; padding: 0px 15px;">Category</p>
-  <ul style="list-style: none; margin: 0px 0px; padding: 0px;">
-    <li style="margin: 5px 0px; padding: 5px 15px;background-color: #dee8f6; border-right:5px #1576ff solid;"><a style="color: #1576ff;" href="">全部</a></li>
+<div class="sidebar-category">
+  <p class="category-header">Category</p>
+  <ul class="category-list">
+    <li class="category-item current"><a class="category-item-link" href="">全部</a></li>
     {%- for category in site.categories -%}
-    <li style="margin: 5px 0px; padding: 5px 15px;"><a href="">{{ category | first | capitalize }}</a></li>
+    <li class="category-item"><a class="category-item-link" href="">{{ category | first | capitalize }}</a></li>
     {%- endfor -%}
   </ul>
 </div>
