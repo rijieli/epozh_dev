@@ -34,8 +34,12 @@ title: 博客
   <p class="category-header">Category</p>
   <ul class="category-list">
     <li class="category-item current"><a class="category-item-link" href="">全部</a></li>
+    {% assign category_count = 0 %}
     {%- for category in site.categories -%}
+    {% if category_count <= 7 %}
     <li class="category-item"><a class="category-item-link" href="">{{ category | first | capitalize }}</a></li>
+    {% assign category_count = category_count | plus: 1 %}
+    {% endif %}
     {%- endfor -%}
   </ul>
 </div>
