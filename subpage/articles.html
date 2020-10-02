@@ -6,36 +6,63 @@ title: 博客
 ---
 
 <script>
-  document.querySelector("#header_idx_{{page.header_index}}").style.color = "#3D3D3D"
+  document.querySelector("#header_idx_{{page.header_index}}").classList.add("current");
 </script>
 
-<div class="articles post">
-
-  {%- if site.posts.size > 0 -%}
-  <ul class="post-list">
-    {%- for post in site.posts -%}
-    <li>
-      {%- assign date_format = site.data_formats.date_format | default: "%b %-d, %Y" -%}
-      <span class="post-meta">{{ post.date | date: date_format }}</span>
-      <h3>
-        <a class="post-link" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
-      </h3>
-    </li>
-    {%- endfor -%}
-  </ul>
-  {%- endif -%}
-
+<div class="post">
+  <div class="post-list-wrapper">
+    {%- if site.posts.size > 0 -%}
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+      {%- capture first_img_url -%}
+      {% include image_set.html content = post.content %}
+      {%- endcapture -%}
+      {% assign first_img_url = first_img_url | strip %}
+      {% if first_img_url.size == 0 %}
+      {% assign list_class = "no-image" %}
+      {% else %}
+      {% assign list_class = "with-image" %}
+      {% endif %}
+      <li class="list-item">
+        <div style="margin: 10px 0px; display: flex; justify-content: space-between;">
+          <div class="list-item-meta {{list_class}}">
+            {%- assign date_format = site.data_formats.date_format | default: "%b %-d, %Y" -%}
+            <p class="item-date">
+              {{ post.date | date: date_format }}</p>
+            <div style="margin:2px 0px; padding: 0px;">
+              <a class="item-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </div>
+            <p class="item-excerpt">
+              {{ post.content | slice: 0, 100 | strip_html | append: "..."}}</p>
+          </div>
+          {% if first_img_url.size > 0 %}
+          <a href="{{ post.url | relative_url }}" class="list-item-image" style="display: inline-block; width: 100px; height: 100px;">
+            <img style="height: 100px; line-height: 130px;border-radius: 17px; object-fit:cover;" src="{{first_img_url}}" alt="">
+          </a>
+          {% endif %}
+        </div>
+      </li>
+      {%- endfor -%}
+    </ul>
+    {%- endif -%}
+  </div>
 </div>
 
+<!-- Sidebar of posts list -->
+
 {% capture sidebar_content %}
-<div class="category" style="font-size: 14px;text-align: left; background-color: #f5f5f5;padding: 10px 0px;">
-  <p style="margin: 10px 0px; padding: 0px 15px;">Category</p>
-  <ul style="list-style: none; margin: 0px 0px; padding: 0px;">
-    <li style="margin: 5px 0px; padding: 5px 15px;background-color: #dee8f6; border-right:5px #1576ff solid;"><a style="color: #1576ff;" href="">全部</a></li>
+<div class="sidebar-category">
+  <p class="category-header">Category</p>
+  <ul class="category-list">
+    <li class="category-item"><a class="category-item-link current" href="">全部</a></li>
+    {% assign category_count = 0 %}
     {%- for category in site.categories -%}
-    <li style="margin: 5px 0px; padding: 5px 15px;"><a href="">{{ category | first | capitalize }}</a></li>
+    {% if category_count <= 7 %}
+    <li class="category-item"><a class="category-item-link" href="">{{ category | first | capitalize }}</a></li>
+    {% assign category_count = category_count | plus: 1 %}
+    {% endif %}
     {%- endfor -%}
   </ul>
 </div>

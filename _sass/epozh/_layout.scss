@@ -140,7 +140,7 @@
 .site-header {
   // border-top: 5px solid $grey-color-dark;
   border-bottom: 1px solid $grey-color-light;
-  min-height: $spacing-unit * 1.865;
+  min-height: 54px;
 
   // Positioning context for the mobile navigation icon
   position: relative;
@@ -179,13 +179,27 @@
 
   .page-link {
     // color: $text-color;
-    color: #7A7A7A;
+    color: #999;
     line-height: $base-line-height;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: inline-block;
+    line-height: 54px;
+    height: 54px;
+    box-sizing: border-box;
+    padding: 0px 1px;
+
+    text-decoration: none;
 
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
       margin-right: 20px;
     }
+  }
+
+  .page-link.current {
+    color: #2B65D9;
+    border-bottom: 3px solid #2B65D9;
   }
 
   @include media-query($on-palm) {
@@ -333,23 +347,71 @@
 .post-list {
   margin-left: 0;
   list-style: none;
+  
 
-  > li {
-    margin-bottom: $spacing-unit;
+  .list-item {
+    margin: 0;
+    border-bottom: 1px #e8e8e8 solid;
+    padding: 0px 15px;
+
+    .list-item-meta {
+      height:100px;
+      margin: 0px; 
+      padding: 0px;
+      vertical-align: middle; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content:center;
+    }
+
   }
+
+  .item-date {
+    font-size:14px;
+    color: #878686;
+    display: block;
+    padding: 0px; 
+    margin: 2px 0px;
+  }
+
+  .item-link {
+    display: block;
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    font-size: 16px; 
+    color: #464647; 
+    font-weight: bold;
+  }
+
+  .item-link:visited {
+    color: #464647;
+  }
+  
+  .item-link:hover {
+    color: #2B65D9;
+    text-decoration: none;
+  }
+
+  .item-excerpt {
+    margin:0px;
+    font-size: 14px;
+    color: #878686;
+    display:block; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    margin: 2px 0px;
+  }
+
+  .no-image {
+    width: 100%;
+  }
+  .with-image {
+    width: 70%;
+  }
+
 }
-
-.post-meta {
-  font-size: $small-font-size;
-  color: $grey-color;
-}
-
-.post-link {
-  display: block;
-  @include relative-font-size(1.5);
-}
-
-
 
 /**
  * Posts
@@ -393,5 +455,68 @@
     @include media-query($on-laptop) {
       @include relative-font-size(1.125);
     }
+  }
+}
+
+/** 
+ * Sidebar Define Here
+ */
+
+.sidebar {
+  display: block; 
+  position: fixed; 
+  top: 100px;
+  width: 120px;
+  text-overflow: clip;
+  
+  .sidebar-content {
+  display: flex; 
+  flex-direction: column;
+  }
+
+  @include media-query($on-laptop) {
+    visibility: hidden;
+  }
+
+  .sidebar-category {
+    font-size: 14px;
+    text-align: left; 
+    padding: 10px 0px;
+    border-right: 1px solid #e8e8e8;
+
+    .category-header {
+      margin: 10px 0px; 
+      padding: 0px 15px;
+      color: #464647;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .category-list {
+      list-style: none; margin: 0px 0px; padding: 0px;
+    }
+
+    .category-item {
+      margin: 5px 0px; 
+      padding: 4px 15px;
+    
+      .category-item-link {
+        display: block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 14px;
+        color: #3D3D3D;
+        letter-spacing: 0.1px;
+      }
+    }
+
+    .category-item .current {
+      font-size: 14px;
+      color: #1373E6;
+      font-weight: bold;
+    }
+
+
   }
 }
