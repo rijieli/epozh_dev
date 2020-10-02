@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Extra empty line should be removed
+title: Extra empty line should be removed, empty line should be removed
 date: 2020-09-26 23:00:05 +0800
 categories: 
 ---

@@ -347,23 +347,71 @@
 .post-list {
   margin-left: 0;
   list-style: none;
+  
 
-  > li {
-    margin-bottom: $spacing-unit;
+  .list-item {
+    margin: 0;
+    border-bottom: 1px #e8e8e8 solid;
+    padding: 0px 15px;
+
+    .list-item-meta {
+      height:100px;
+      margin: 0px; 
+      padding: 0px;
+      vertical-align: middle; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content:center;
+    }
+
   }
+
+  .item-date {
+    font-size:14px;
+    color: #878686;
+    display: block;
+    padding: 0px; 
+    margin: 2px 0px;
+  }
+
+  .item-link {
+    display: block;
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    font-size: 16px; 
+    color: #464647; 
+    font-weight: bold;
+  }
+
+  .item-link:visited {
+    color: #464647;
+  }
+  
+  .item-link:hover {
+    color: #2B65D9;
+    text-decoration: none;
+  }
+
+  .item-excerpt {
+    margin:0px;
+    font-size: 14px;
+    color: #878686;
+    display:block; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    margin: 2px 0px;
+  }
+
+  .no-image {
+    width: 100%;
+  }
+  .with-image {
+    width: 70%;
+  }
+
 }
-
-.post-meta {
-  font-size: $small-font-size;
-  color: $grey-color;
-}
-
-.post-link {
-  display: block;
-  @include relative-font-size(1.5);
-}
-
-
 
 /**
  * Posts
@@ -433,12 +481,15 @@
   .sidebar-category {
     font-size: 14px;
     text-align: left; 
-    background-color: #f5f5f5;
     padding: 10px 0px;
+    border-right: 1px solid #e8e8e8;
 
     .category-header {
       margin: 10px 0px; 
       padding: 0px 15px;
+      color: #464647;
+      font-weight: bold;
+      font-size: 15px;
     }
 
     .category-list {
@@ -447,20 +498,23 @@
 
     .category-item {
       margin: 5px 0px; 
-      padding: 5px 15px;
+      padding: 4px 15px;
     
       .category-item-link {
         display: block;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+        font-size: 14px;
+        color: #3D3D3D;
+        letter-spacing: 0.1px;
       }
     }
 
-    .category-item.current {
-      background-color: #dee8f6; 
-      border-right:5px #1576ff solid;
-      color: #1576ff;
+    .category-item .current {
+      font-size: 14px;
+      color: #1373E6;
+      font-weight: bold;
     }
 
 

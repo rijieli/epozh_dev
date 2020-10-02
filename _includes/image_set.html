@@ -1,0 +1,69 @@
+{% comment %}
+
+    Author: Roger <rijie.li@outlook.com>
+    License: MIT License
+    GitHub: https://github.com/rijieli/jekyll-image-set
+
+    Get all image URL of posts. Pure Liquid, and easy to use.
+
+    Usage:
+        {% include post_image.html content = post.content range="all" %}
+    
+    Parameters:
+        content: page content
+        range:
+            "all":      return all image URL joined by `,`
+            "first":    return first image URL
+
+{% endcomment %}
+
+{% assign include_content = include.content | default: "" %}
+{% assign range = include.range | default: "first" %}
+
+{%- capture DOUBLE_QUOTES_SIGN -%}
+"
+{%- endcapture -%}
+
+{%- capture SRC_PROPERTY_SIGN -%}
+src="
+{%- endcapture -%}
+
+{% assign img_set = "" %}
+
+{% assign content_clip = include_content | split: "<img " %}
+{% if content_clip.size > 0 %}
+    {% assign img_founded = 0 %}
+
+    {%- for clip in content_clip -%}
+        
+        {% if img_founded == 1 and range == "first" %}
+            {% break %}
+        {% endif %}
+
+        {% if clip contains SRC_PROPERTY_SIGN %}
+            {% assign img_tags = clip | split: " " %}
+
+            {% assign src_property = "" %}
+
+            {% for property in img_tags %}
+                {% if property contains SRC_PROPERTY_SIGN %}
+                    {% assign src_property = property %}
+                    {% break %}
+                {% endif%}
+            {% endfor %}
+            
+            {% assign src_property = src_property | remove: SRC_PROPERTY_SIGN %}
+            {% assign src_property = src_property | remove: DOUBLE_QUOTES_SIGN %}
+            
+            {% if img_founded == 0 %}
+                {% assign img_set = src_property %}
+            {% else %}
+                {% assign img_set = img_set | append: "," | append: src_property %}
+            {% endif %}
+            {% assign img_founded = 1 %}
+        {% endif %}
+
+    {%- endfor -%}
+{% endif %}
+
+{{ img_set | strip }}
