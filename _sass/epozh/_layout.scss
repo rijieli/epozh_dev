@@ -489,7 +489,7 @@
       padding: 0px 15px;
       color: #464647;
       font-weight: bold;
-      font-size: 15px;
+      font-size: 18px;
     }
 
     .category-list {
@@ -513,10 +513,15 @@
 
     .category-item .current {
       font-size: 14px;
-      color: #1373E6;
+      color: #2B65D9;
       font-weight: bold;
     }
 
+    .category-item a:hover {
+      text-decoration: none;
+      color: #2B65D9;
+      font-weight: bold;
+    }
 
   }
 }
