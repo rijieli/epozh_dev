@@ -18,11 +18,20 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: RIJIE
+title: 日杰 RIJIE
 email: rijie.li@outlook.com
 description: For serve.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https//epozh.cn/"
+author: RIJIE
+twitter:
+  username: rijieli
+  card: summary
+
+social:
+  name: Rijie Li
+  links:
+    - https://weibo.com/lirijie1
 
 # Build settings
 # theme: minima
