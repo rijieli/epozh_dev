@@ -36,7 +36,7 @@ title: 博客
               </a>
             </div>
             <p class="item-excerpt">
-              {{ post.content | slice: 0, 100 | strip_html | append: "..."}}</p>
+              {{ post.content | strip_html | slice: 0, 140 | strip }}</p>
           </div>
           {% if first_img_url.size > 0 %}
           <a href="{{ post.url | relative_url }}" class="list-item-image" style="display: inline-block; width: 100px; height: 100px;">
