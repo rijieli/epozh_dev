@@ -10,40 +10,22 @@ header_index: 2
     document.querySelector("#header_idx_{{page.header_index}}").classList.add("current");
 </script>
 
-<div style="text-align: center; height: 60px; margin:0px;">
-    <ul style="display: inline; line-height: 60px; margin: 0;">
-        <li style="list-style: none; display: inline; margin: 10px; font-size: 15px; text-align: center;">
-            <a style="color: #3d3d3d; text-decoration: none; font-weight: bold;" href="/works/">所有</a>
-        </li>
-        {% assign work_platforms =  site.data.works | map: "platform" | compact | uniq %}
-        {% for platform in work_platforms %}
-        {% assign platform_detail = site.data.works_category | where: "platform",platform | first %}
-        <li style="list-style: none; display: inline; margin: 10px; font-size: 15px; text-align: center;">
-            {% if platform == page.current_page_platform %}
-            <a style="color: #3d3d3d; text-decoration: none; font-weight: bold;"
-                href="/works/{{platform}}">{{ platform_detail.name | capitalize }}</a>
-            {% else %}
-            <a style="color: #7a7a7a; text-decoration: none;" href="/works/{{platform}}">{{ platform_detail.name | capitalize }}</a>
-            {% endif %}
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+{% include works_filter.html %}
 
-<div style="display: block; float: none; line-height: 24px; margin: 0px; padding: 0px;">
-    <ol
-        style="margin: 0px; display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: minmax(100px, auto);column-gap: 20px; list-style-type: none; vertical-align: baseline; row-gap: 20px; position: relative;">
-        {% for item in site.data.works %}
-        {%- if item.platform == page.current_page_platform or page.current_page_platform == "all" -%}
-        <li id="workitem-{{item.id}}"
-            style="padding: 10px; border: 1px #999 solid;display: list-item; vertical-align: baseline; width: 200px;">
-            <a href="{{ item.url }}">{{item.title}}</a>
-            <p> {{ item.visit }} | {{ item.platform }}</p>
-            {%- assign date_format = site.data_formats.date_format | default: "%b %-d, %Y" -%}
-            <p>{{ item.date | date: date_format }}</p>
-            <img style="padding: 0px;" src="{{ item.img_path }}" alt="">
-        </li>
-        {%- endif -%}
-        {% endfor %}
-    </ol>
+<div class="wrapper">
+    <div class="page-content">
+        <ol class="works-list">
+            {% for item in site.data.works %}
+            {%- if item.platform == page.current_page_platform or page.current_page_platform == "all" -%}
+            <li class="list-item" id="workitem-{{item.id}}">
+                <a href="{{ item.url }}">{{item.title}}</a>
+                <p> {{ item.visit }} | {{ item.platform }}</p>
+                {%- assign date_format = site.data_formats.date_format | default: "%b %-d, %Y" -%}
+                <p>{{ item.date | date: date_format }}</p>
+                <img style="padding: 0px;" src="{{ item.img_path }}" alt="">
+            </li>
+            {%- endif -%}
+            {% endfor %}
+        </ol>
+    </div>
 </div>

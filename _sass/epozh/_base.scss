@@ -205,6 +205,11 @@ pre {
   padding-top: $spacing-unit;
   @extend %clearfix;
   
+  @include media-query($on-palm) {
+    max-width: 100%;
+    padding: 0;
+  }
+
 }
 
 

@@ -9,6 +9,7 @@ title: 博客
   document.querySelector("#header_idx_{{page.header_index}}").classList.add("current");
 </script>
 
+<div class="wrapper">
 <div class="post">
   <div class="post-list-wrapper">
     {%- if site.posts.size > 0 -%}
@@ -71,3 +72,5 @@ title: 博客
 {% endcapture %}
 
 {%- include sidebar.html sidebar_content=sidebar_content -%}
+
+</div>
