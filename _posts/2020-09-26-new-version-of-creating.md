@@ -2,6 +2,7 @@
 layout: post
 title: 中文标题文章效果测试
 date: 2020-09-26 18:38:31 +0800
+show_excerpt_image: false
 categories: data algorithm andonelongcategories
 ---
 

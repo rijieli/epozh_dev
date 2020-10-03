@@ -19,14 +19,14 @@ title: 博客
       {% include image_set.html content = post.content %}
       {%- endcapture -%}
       {% assign first_img_url = first_img_url | strip %}
-      {% if first_img_url.size == 0 %}
-      {% assign list_class = "no-image" %}
+      {% if first_img_url.size == 0 or post.show_excerpt_image == false %}
+      {% assign show_except_image = "no-image" %}
       {% else %}
-      {% assign list_class = "with-image" %}
+      {% assign show_except_image = "with-image" %}
       {% endif %}
       <li class="list-item">
         <div style="margin: 10px 0px; display: flex; justify-content: space-between;">
-          <div class="list-item-meta {{list_class}}">
+          <div class="list-item-meta {{show_except_image}}">
             {%- assign date_format = site.data_formats.date_format | default: "%b %-d, %Y" -%}
             <p class="item-date">
               {{ post.date | date: date_format }}</p>
@@ -36,9 +36,9 @@ title: 博客
               </a>
             </div>
             <p class="item-excerpt">
-              {{ post.content | strip_html | slice: 0, 140 | strip }}</p>
+              {{ post.content | strip_html | slice: 0, 200 | strip }}</p>
           </div>
-          {% if first_img_url.size > 0 %}
+          {% if show_except_image == "with-image" %}
           <a href="{{ post.url | relative_url }}" class="list-item-image" style="display: inline-block; width: 100px; height: 100px;">
             <img style="height: 100px; line-height: 130px;border-radius: 17px; object-fit:cover;" src="{{first_img_url}}" alt="">
           </a>

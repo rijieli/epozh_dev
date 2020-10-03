@@ -26,6 +26,7 @@ layout: post
 title: {title}
 date: {date}
 categories: 
+show_excerpt_image: true
 ---
 
 '''.format(title=title.replace('-', ' ').capitalize(), date=post_date)
