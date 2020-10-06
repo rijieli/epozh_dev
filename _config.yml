@@ -57,7 +57,7 @@ header_pages:
   - subpage/about.html
 
 exclude:
-  - newpost.py
+  - manage.py
   - CNAME
   - .gitignore
 
