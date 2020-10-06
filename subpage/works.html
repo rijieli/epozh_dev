@@ -10,7 +10,7 @@ header_index: 2
     document.querySelector("#header_idx_{{page.header_index}}").classList.add("current");
 </script>
 
-{% include works_filter.html %}
+{% include works_filter.html  current=page.current_page_platform %}
 
 <div class="wrapper">
     <div class="page-content">

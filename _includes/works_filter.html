@@ -1,18 +1,22 @@
 <div class="works-filter">
+    {% assign current_page = include.current | default: "all" %}
+
+    {% if current_page == "all" %}
+        {% assign highlight_class = "works-cate-highlight" %}
+    {% endif %}
+
     <ul style="display: inline; line-height: 60px; margin: 0;">
         <li style="list-style: none; display: inline; margin: 10px; font-size: 15px; text-align: center;">
-            <a style="color: #3d3d3d; text-decoration: none; font-weight: bold;" href="/works/">所有</a>
+            <a class="{{highlight_class}}" href="/works/">所有</a>
         </li>
         {% assign work_platforms =  site.data.works | map: "platform" | compact | uniq %}
         {% for platform in work_platforms %}
         {% assign platform_detail = site.data.works_category | where: "platform",platform | first %}
         <li style="list-style: none; display: inline; margin: 10px; font-size: 15px; text-align: center;">
-            {% if platform == page.current_page_platform %}
-            <a style="color: #3d3d3d; text-decoration: none; font-weight: bold;"
-                href="/works/{{platform}}">{{ platform_detail.name | capitalize }}</a>
+            {% if platform == current_page %}
+            <a class="works-cate-highlight" href="/works/{{platform}}">{{ platform_detail.name }}</a>
             {% else %}
-            <a style="color: #7a7a7a; text-decoration: none;"
-                href="/works/{{platform}}">{{ platform_detail.name | capitalize }}</a>
+            <a href="/works/{{platform}}">{{ platform_detail.name }}</a>
             {% endif %}
         </li>
         {% endfor %}

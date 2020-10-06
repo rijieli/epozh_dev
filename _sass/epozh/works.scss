@@ -161,5 +161,16 @@
     height: 60px;
     margin:0px;
     background-color: $background-grey;
+    color: #7a7a7a;
+
+    a {
+        color: #7a7a7a;
+        text-decoration: none;
+    }
+
+    .works-cate-highlight {
+        color: #3d3d3d;
+        font-weight: bold;
+    }
 }
   
