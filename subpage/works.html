@@ -20,7 +20,6 @@ header_index: 2
             <li class="list-item" id="workitem-{{item.id}}">
                 <div class="image-wrapper">
                     <div class="work-data">
-                        <p>View: {{ item.visit }} </p>
                         {%- assign date_format = site.data_formats.date_format | default: "%b %-d, %Y" -%}
                         <p>{{ item.date | date: date_format }}</p>
                     </div>
@@ -34,7 +33,7 @@ header_index: 2
                         <div class="work-link-meta-platform">
                             <img src="{{ "/assets/img/sns_icon/"| append: item.platform | append: "-roundC888.svg" | relative_url }}" alt="">
                             {% assign platform_detail = site.data.works_category | where: "platform", item.platform | first %}
-                            <span>{{ platform_detail.name | capitalize }}</span>
+                            <span>{{ platform_detail.name }}</span>
                         </div>
                         <div class="work-link-meta-visit">
                             <img src="{{ "/assets/img/works/works-visit-icon.svg" | relative_url }}" alt="">
