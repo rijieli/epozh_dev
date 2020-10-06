@@ -527,55 +527,6 @@
   }
 }
 
-/**
- * Works
- */
-
-.works-list {
-  display: block; 
-  list-style-type: none;
-  margin: 0px;
-  overflow: hidden;
-  padding-top: 30px;
-
-  .list-item {
-    border: 1px $border-grey solid;
-    padding: 20px;
-    border-radius: 10px;
-    display: block;
-    float: left; 
-    margin: 5px;
-    width: calc(33.33% - 10px);
-    box-sizing: border-box;
-    // box-shadow: 0 3px 3px rgba(36, 37, 38, 0.1);
-  }
-
-  @include media-query($on-laptop) {
-    .list-item {
-      width: calc(50% - 10px);
-    }
-  }
-
-  @include media-query($on-palm) {
-    .list-item {
-      width: 100%;
-      margin: 0px 0px 5px 0px;
-    }
-  }
-}
-
-.works-filter {
-  position: fixed;
-  top: 54px;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  text-align: center; 
-  height: 60px;
-  margin:0px;
-  background-color: $background-grey	;
-}
-
 .clearfix:after {
   content: "";
   visibility: hidden;

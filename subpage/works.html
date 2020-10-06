@@ -18,11 +18,30 @@ header_index: 2
             {% for item in site.data.works %}
             {%- if item.platform == page.current_page_platform or page.current_page_platform == "all" -%}
             <li class="list-item" id="workitem-{{item.id}}">
-                <a href="{{ item.url }}">{{item.title}}</a>
-                <p> {{ item.visit }} | {{ item.platform }}</p>
-                {%- assign date_format = site.data_formats.date_format | default: "%b %-d, %Y" -%}
-                <p>{{ item.date | date: date_format }}</p>
-                <img style="padding: 0px;" src="{{ item.img_path }}" alt="">
+                <div class="image-wrapper">
+                    <div class="work-data">
+                        <p>View: {{ item.visit }} </p>
+                        {%- assign date_format = site.data_formats.date_format | default: "%b %-d, %Y" -%}
+                        <p>{{ item.date | date: date_format }}</p>
+                    </div>
+                    <a href="{{ item.url }}">
+                        <img src="{{ item.img_path }}" alt="">
+                    </a>
+                </div>
+                <div class="work-link">
+                    <a href="{{ item.url }}">{{item.title}}</a>
+                    <div class="work-link-meta">
+                        <div class="work-link-meta-platform">
+                            <img src="{{ "/assets/img/sns_icon/"| append: item.platform | append: "-roundC888.svg" | relative_url }}" alt="">
+                            {% assign platform_detail = site.data.works_category | where: "platform", item.platform | first %}
+                            <span>{{ platform_detail.name | capitalize }}</span>
+                        </div>
+                        <div class="work-link-meta-visit">
+                            <img src="{{ "/assets/img/works/works-visit-icon.svg" | relative_url }}" alt="">
+                            <span>{{ item.visit }}</span>
+                        </div>
+                    </div>
+                </div>
             </li>
             {%- endif -%}
             {% endfor %}
