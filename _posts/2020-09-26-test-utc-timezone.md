@@ -160,9 +160,9 @@ _Horizontal line :_
 
 _Image with alt :_
 
-![picture alt](/assets/img/works/1.jpg "Title is optional")
+![picture alt](/assets/img/sample_images/3.jpg "Title is optional")
 
-    Markup : ![picture alt](/assets/img/works/1.jpg "Title is optional")
+    Markup : ![picture alt](/assets/img/sample_images/13.jpg "Title is optional")
 
 Foldable text:
 

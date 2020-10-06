@@ -6,7 +6,7 @@ show_excerpt_image: false
 categories: data algorithm andonelongcategories
 ---
 
-![Local](/assets/img/works/1.jpg)
+![Local](/assets/img/sample_images/3.jpg)
 
 Markdown Cheatsheet
 ===================
@@ -163,9 +163,9 @@ _Horizontal line :_
 
 _Image with alt :_
 
-![picture alt](/assets/img/works/1.jpg "Title is optional")
+![picture alt](/assets/img/sample_images/5.jpg "Title is optional")
 
-    Markup : ![picture alt](/assets/img/works/1.jpg "Title is optional")
+    Markup : ![picture alt](/assets/img/sample_images/1.jpg "Title is optional")
 
 Foldable text:
 
