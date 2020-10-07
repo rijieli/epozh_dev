@@ -4,9 +4,10 @@
 .highlight {
   background: #fff;
   @extend %vertical-rhythm;
+  border-radius: 6px;
 
   .highlighter-rouge & {
-    background: #eef;
+    background: #f6f8fa;
   }
 
   .c     { color: #998; font-style: italic } // Comment

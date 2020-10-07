@@ -133,9 +133,8 @@ blockquote {
   color: $grey-color;
   border-left: 4px solid $grey-color-light;
   padding-left: $spacing-unit / 2;
-  @include relative-font-size(1.125);
-  letter-spacing: -1px;
-  font-style: italic;
+  @include relative-font-size(1);
+  letter-spacing: 0px;
 
   > :last-child {
     margin-bottom: 0;
@@ -149,18 +148,21 @@ blockquote {
  */
 pre,
 code {
+  font-family: $monospace-font-family;
   @include relative-font-size(0.9375);
-  border: 1px solid $grey-color-light;
-  border-radius: 3px;
-  background-color: #eef;
+  border-radius: 6px;
+  background-color: #f6f8fa;
+  color: #24292e;
 }
 
 code {
-  padding: 1px 5px;
+  padding: 2px 8px;
+  line-height: 20px;
+  font-size: 14px;
 }
 
 pre {
-  padding: 8px 12px;
+  padding: 16px;
   overflow-x: auto;
 
   > code {
@@ -207,7 +209,8 @@ pre {
   
   @include media-query($on-palm) {
     max-width: 100%;
-    padding: 0;
+    padding-left: 3%;
+    padding-right: 3%;
   }
 
 }

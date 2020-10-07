@@ -1,0 +1,41 @@
+.toc-sidebar-header {
+    font-size: 16px;
+    margin: 10px 0px;
+    font-weight: bold;
+}
+
+.toc-sidebar {
+
+    margin: 0;
+    font-size: 14px;
+
+    .toc-sidebar-item {
+        list-style: none;
+        margin: 6px 0px;
+
+        a {
+            display: block;
+            overflow: hidden; 
+            white-space: nowrap; 
+            text-overflow: ellipsis;
+            color: $grey-color;
+            text-decoration: none;
+            transition-property: display color text-overflow;
+            transition-duration: .5s;
+            transition-timing-function: ease;
+        }
+
+        a:hover {
+            display: inline;
+            text-overflow: unset;
+            color: $text-color;
+            background-color: #fff;
+            border-radius: 5px;
+            padding-right: 8px;
+        }
+    }
+}
+
+.share-sidebar {
+    margin: 0px;
+}
