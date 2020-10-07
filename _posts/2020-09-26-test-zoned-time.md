@@ -2,7 +2,7 @@
 layout: post
 title: Editing and sharing content with gists
 date: 2020-09-26 18:01:32 +0800
-categories: thought data
+categories: 数据
 ---
 
 Markdown Cheatsheet

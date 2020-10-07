@@ -2,7 +2,7 @@
 layout: post
 title: Extra empty line should be removed, empty line should be removed
 date: 2020-09-26 23:00:05 +0800
-categories: 
+categories: 未分类
 ---
 
 Markdown 语法说明 (简体中文版) / ([点击查看快速入门](./basic.html))

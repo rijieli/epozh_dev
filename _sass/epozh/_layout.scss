@@ -570,3 +570,16 @@
   height: 0;
   clear: both;
 }
+
+/** 
+ * Category
+ */
+
+.category-anchor-float::before {
+  content: " ";
+  display: block;
+  height: 4rem;
+  margin-top: -4rem;
+  pointer-events: none;
+  visibility: hidden;
+}

@@ -2,7 +2,7 @@
 layout: post
 title: 菅义伟:日本下定决心明年办奥运
 date: 2020-09-26 09:37:31 +0800
-categories: 生活 娱乐
+categories: 随想
 ---
 
 Markdown Cheatsheet

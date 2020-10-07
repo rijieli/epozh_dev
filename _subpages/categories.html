@@ -1,0 +1,51 @@
+---
+layout: default
+header_index: 1
+permalink: /categories/
+title: 分类
+---
+
+<script>
+  document.querySelector("#header_idx_{{page.header_index}}").classList.add("current");
+</script>
+
+<div class="wrapper">
+  <div class="post">
+    {%- if site.categories.size > 0 -%}
+    {% assign categories = site.categories %}
+
+    <div style="display: block;">
+
+      <h2>全部分类</h2>
+
+      {% for category in categories %}
+
+      <a style="display: inline-block;margin-right: 10px;" href="#{{category[0]}}">
+        <div style="float: left;margin-right: 10px;">#{{ category[0] | upper }}</div>
+        <div style="float: left;">{{ category[1].size }}</div>
+      </a>
+
+      {% endfor %}
+    </div>
+
+
+    {% for category in categories %}
+    <h2 class="category-anchor-float" id="{{ category[0] }}">{{ category[0] }}</h2>
+    <ul>
+      {%- for post in category[1] -%}
+      <li>
+        {%- assign date_format = site.data_formats.date_format_short | default: "%b %-d, %Y" -%}
+        <p style="display: inline;">{{ post.date | date: date_format }}</p>
+        <a href="{{ post.url | relative_url }}">
+          {{ post.title | escape }}
+        </a>
+      </li>
+      {%- endfor -%}
+    </ul>
+    {% endfor %}
+    {%- endif -%}
+  </div>
+
+  {% include scroll_to_top.html %}
+
+</div>

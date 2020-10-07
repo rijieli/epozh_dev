@@ -2,7 +2,7 @@
 layout: post
 title: 通过 increment 标记（tag）创建的变量与通过 assign 或 capture 创建的变量是相互独立的
 date: 2020-09-26 18:04:11 +0800
-categories: 随笔 哲学
+categories: 随想
 ---
 Markdown Cheatsheet
 ===================

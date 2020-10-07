@@ -2,7 +2,7 @@
 layout: post
 title: Toc test new
 date: 2020-10-07 09:55:16 +0800
-categories: 
+categories: 技巧
 show_excerpt_image: true
 ---
 
