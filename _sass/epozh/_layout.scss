@@ -147,7 +147,7 @@
   left: 0;
   right: 0;
   background: #fff;
-  z-index: 10;
+  z-index: 11;
   box-sizing: border-box;
   height: 54px;
 }
@@ -419,6 +419,7 @@
     color: $post-font-color;
     line-height: 30px;
     margin-bottom: 20px;
+    word-break: break-all;
   }
 
   h1 {
