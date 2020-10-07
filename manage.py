@@ -50,15 +50,15 @@ def create_post(user_input):
 
     # create Liquid front matter
     front_matter = '''\
-    ---
-    layout: post
-    title: {title}
-    date: {date}
-    categories: 
-    show_excerpt_image: true
-    ---
+---
+layout: post
+title: {title}
+date: {date}
+categories: 
+show_excerpt_image: true
+---
 
-    '''.format(title=title.replace('-', ' ').capitalize(), date=post_date)
+'''.format(title=title.replace('-', ' ').capitalize(), date=post_date)
 
     # if we're in a jekyll root, pop it in ./_posts
     if(os.path.exists(os.getcwd() + '/_posts')):
