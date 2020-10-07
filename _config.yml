@@ -45,21 +45,27 @@ show_excerpts: true
 
 data_formats:
   date_format: "%Y-%m-%d %H:%M"
+  date_format_short: "%Y-%m-%d"
 
 # show future post
 # future: true
 
 # show which page on the navbar
 header_pages:
-  - subpage/articles.html
-  - subpage/works.html
-  - subpage/projects.html
-  - subpage/about.html
+  - _subpages/articles.html
+  - _subpages/works.html
+  - _subpages/projects.html
+  - _subpages/about.html
 
 exclude:
   - manage.py
   - CNAME
   - .gitignore
+
+include:
+  - _subpages
+
+permalink: /:year:month:day/:title/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
