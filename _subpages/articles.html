@@ -61,7 +61,7 @@ title: 博客
     {% assign category_count = 0 %}
     {%- for category in site.categories -%}
     {% if category_count <= 7 %}
-    <li class="category-item"><a class="category-item-link" href="">{{ category | first | capitalize }}</a></li>
+    <li class="category-item"><a class="category-item-link" href="/categories/#{{ category | first | strip}}">{{ category | first | capitalize }}</a></li>
     {% assign category_count = category_count | plus: 1 %}
     {% endif %}
     {%- endfor -%}
