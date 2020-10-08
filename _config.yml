@@ -39,6 +39,7 @@ social:
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
+ - jekyll-paginate
 
 # generate and show post excerpts
 show_excerpts: true
@@ -52,7 +53,7 @@ data_formats:
 
 # show which page on the navbar
 header_pages:
-  - _subpages/articles.html
+  - index.html
   - _subpages/works.html
   - _subpages/projects.html
   - _subpages/about.html
@@ -66,6 +67,11 @@ include:
   - _subpages
 
 permalink: /:year:month:day/:title/
+
+# Jekyll Paginate Config
+
+paginate: 5
+paginate_path: "/blog/:num/"
 
 # Exclude from processing.
 # The following items will not be processed, by default.

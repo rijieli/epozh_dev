@@ -1,0 +1,38 @@
+.pagination {
+
+    .pagination-list {
+        list-style: none;
+        margin:0;
+        padding:0;
+        width: 100%; 
+        align-items: center; 
+        display: flex;
+    }
+
+    .pagination-side {
+        display: flex;
+        flex: 1;
+        align-items: center;
+    }
+
+    .pagination-side.prev {
+        justify-content: flex-start;
+    }
+
+    .pagination-side.next {
+        justify-content: flex-end;
+    }
+
+    .pagination-list-item {
+        display: list-item; 
+        margin-left: 3px;
+        padding: 3px 5px; 
+        background-color: $background-grey; 
+        border-radius: 3px;
+        color: $text-color;
+    }
+
+    .current {
+        font-weight: bold;
+    }
+}

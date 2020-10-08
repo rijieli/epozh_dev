@@ -1,0 +1,37 @@
+---
+title: 主页
+permlink: /epozh/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+{%- include head.html -%}
+
+<body class="index-page">
+    <div class="index-icon">
+        <img src="{{ "/assets/img/epozh.svg" | relative_url }}" alt="">
+    </div>
+    <ul class="sns-list">
+        {% for platform in site.data.works_category %}
+        {% if platform.url != nil and platform.show == 'TRUE' %}
+        <li>
+            {% if jekyll.environment == "production" %}
+            {%- assign platform_url = "" -%}
+            {% else %}
+            {%- assign platform_url = platform.url -%}
+            {% endif %}
+            <a href="{{ platform_url | relative_url }}" target="_blank">
+                <img src="{{ "/assets/img/sns_icon/"| append: platform.platform | append: "-round.svg" | relative_url }}"
+                    alt=""><span class="tooltip">{{ platform.name }}</span>
+            </a>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    <div class="footer">
+        <p>Copyright © 2017-2020
+            RIJIE.</p>
+    </div>
+</body>
+
+</html>

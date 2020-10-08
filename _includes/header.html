@@ -3,7 +3,7 @@
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title" rel="author" href="{{ "/blog" | relative_url }}">
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
       <img src="{{ "/assets/img/site-icon.svg" | relative_url }}" alt="" >
     </a>
 
