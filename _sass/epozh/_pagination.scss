@@ -1,5 +1,21 @@
 .pagination {
 
+    margin-top: 20px;
+    font-size: 16px;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: $grey-color;
+    text-align: center;
+
+    a {
+        color: $grey-color;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $brand-color;
+    }
+
     .pagination-list {
         list-style: none;
         margin:0;
@@ -17,22 +33,33 @@
 
     .pagination-side.prev {
         justify-content: flex-start;
+        font-size: 14px;
     }
 
     .pagination-side.next {
         justify-content: flex-end;
+        font-size: 14px;
     }
 
     .pagination-list-item {
         display: list-item; 
-        margin-left: 3px;
-        padding: 3px 5px; 
-        background-color: $background-grey; 
-        border-radius: 3px;
-        color: $text-color;
+        margin: 0px 3px;
+        box-sizing: border-box;
+        height: 26px;
+        
+        a {
+            display: block;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
     }
 
     .current {
-        font-weight: bold;
+        border-bottom: 3px $brand-color solid;
+        color: $brand-color;
+    }
+
+    .current .omit-control {
+        display: none;
     }
 }

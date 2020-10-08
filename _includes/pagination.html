@@ -2,47 +2,69 @@
     <ul class="pagination-list">
         <li class="pagination-side prev">
             {% if paginator.previous_page %}
-            <a href="{{ paginator.next_page_path }}">前</a>
+            <a href="{{ paginator.previous_page_path }}">上一页</a>
             {% endif %}
         </li>
-        <li class="pagination-list-item">
+
+        {% if paginator.page == 1 %}{% assign is_first="current" %} {% endif %}
+        <li class="pagination-list-item {{is_first}}">
             <a href="/" class="page-number ">1</a>
         </li>
 
+        <li class="pagination-list-item {{is_first}}">
+            <a class="omit-control">...</a>
+        </li>
+
+
         {% if paginator.total_pages > 4 %}
 
-        {% assign page_num_begin = paginator.page | minus: 1 %}
-        {% assign page_num_end = paginator.page | plus: 1 %}
+            {% assign page_num_begin = paginator.page | minus: 1 %}
+            {% assign page_num_end = paginator.page | plus: 1 %}
 
-        {% if page_num_begin <= 1 %}
-        {% assign page_num_begin = 1 | plus: 1 %}
-        {% assign page_num_end = page_num_begin | plus: 1 %}
-        {% endif %}
-        {% if page_num_end >= paginator.total_pages %}
-        {% assign page_num_end = paginator.total_pages | minus: 1 %}
-        {% assign page_num_begin = page_num_end | minus: 1 %}
+            {% if page_num_begin <= 1 %}
+                {% assign page_num_begin = 1 | plus: 1 %}
+                {% assign page_num_end = page_num_begin | plus: 1 %}
+            {% endif %}
+
+            {% if page_num_end >= paginator.total_pages %}
+                {% assign page_num_end = paginator.total_pages | minus: 1 %}
+                {% assign page_num_begin = page_num_end | minus: 1 %}
+            {% endif %}
+
+            {% for page_num in (page_num_begin..page_num_end) %}
+                {% if page_num == paginator.page %}
+                {% assign is_current="current" %}
+                {% else %}{% assign is_current="" %}
+                {% endif %}
+                <li class="pagination-list-item {{is_current}}">
+                    <a href="/blog/{{page_num}}" class="page-number ">
+                        {{ page_num }}
+                    </a>
+                </li>
+            {% endfor %}
+
+            {% else %}
+                {% assign page_num_end=paginator.total_pages | minus: 1 %}
+                {% for page_num in (2..page_num_end) %}
+                    {% if page_num == paginator.page %}
+                        {% assign is_current="current" %}
+                        {% else %}{% assign is_current="" %}
+                    {% endif %}
+                <li class="pagination-list-item {{is_current}}">
+                    <a href="/blog/{{page_num}}" class="page-number">
+                        {{ page_num }}
+                    </a>
+                </li>
+                {% endfor %}
         {% endif %}
 
-        {% for page_num in (page_num_begin..page_num_end) %}
-        <li class="pagination-list-item">
-            <a href="/blog/{{page_num}}" class="page-number ">
-                {{ page_num }}
-            </a>
+        
+
+        {% if paginator.page == paginator.total_pages %}{% assign is_last="current" %} {% endif %}
+        <li class="pagination-list-item {{is_last}}">
+            <a class="omit-control">...</a>
         </li>
-        {% endfor %}
-
-        {% else %}
-        {% assign page_num_end=paginator.total_pages | minus: 1 %}
-        {% for page in (2..page_num_end) %}
-        <li class="pagination-list-item">
-            <a href="/blog/{{page}}" class="page-number">
-                {{ page }}
-            </a>
-        </li>
-        {% endfor %}
-        {% endif %}
-
-        <li class="pagination-list-item {{current_page_class}}">
+        <li class="pagination-list-item {{is_last}}">
             <a href="/blog/{{ paginator.total_pages }}" class="page-number ">
                 {{ paginator.total_pages }}
             </a>
@@ -50,7 +72,7 @@
 
         <li class="pagination-side next">
             {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path }}">后</a>
+            <a href="{{ paginator.next_page_path }}">下一页</a>
             {% endif %}
         </li>
     </ul>
