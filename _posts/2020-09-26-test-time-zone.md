@@ -2,7 +2,7 @@
 layout: post
 title: Getting started with writing and formatting on GitHub
 date: 2020-09-26 17:28:40 +0800
-categories: 开发
+categories: 开发 进度
 ---
 
 Markdown Cheatsheet

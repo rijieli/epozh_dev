@@ -54,7 +54,7 @@ def create_post(user_input):
 layout: post
 title: {title}
 date: {date}
-categories: 
+categories: 未分类
 show_excerpt_image: true
 ---
 

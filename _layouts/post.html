@@ -12,15 +12,23 @@ layout: default
 
     <header class="post-header">
       <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-      <p class="post-meta">
-        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-          {%- assign date_format = site.data_formats.date_format | default: "%b %-d, %Y" -%}
-          {{ page.date | date: date_format }}
+      <div class="post-meta">
+        <time class="post-meta-date" class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {{ page.date | date: site.data_formats.date_format_short }}
         </time>
-        {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card"
-            itemprop="name">{{ page.author }}</span></span>
-        {%- endif -%}</p>
+
+        <span class="post-meta-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-author h-card" itemprop="name">{{ page.author | default: "RIJIE"}}</span>
+        </span>
+
+        {%- if page.categories -%}
+          {% for category in page.categories %}
+            <div class="post-meta-cate">
+              <a href="/categories/#{{category}}">#{{category}}</a>
+            </div>
+          {% endfor %}
+        {%- endif-%}
+      </div>
     </header>
 
     <div class="post-content e-content" itemprop="articleBody">

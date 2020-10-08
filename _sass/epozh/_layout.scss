@@ -420,7 +420,24 @@
 
 .post-meta {
   color: #655e5e;
-  line-height: 20px;
+  font-size: 15px;
+
+  .post-meta-date {
+    margin-right: 5px;
+  }
+
+  .post-meta-author {
+    margin-right: 5px;
+  }
+
+  .post-meta-cate {
+    display: inline;
+    
+    a {
+      color: #655e5e;
+    }
+  }
+
 }
 
 .post-content {

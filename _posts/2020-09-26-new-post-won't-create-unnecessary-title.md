@@ -2,7 +2,7 @@
 layout: post
 title: New post won't create unnecessary title
 date: 2020-09-26 22:54:50 +0800
-categories: 文档
+categories: 文档 计划
 ---
 
 Markdown 语法说明 (简体中文版) / ([点击查看快速入门](./basic.html))
