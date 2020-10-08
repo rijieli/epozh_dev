@@ -7,16 +7,16 @@
         </li>
 
         {% if paginator.page == 1 %}{% assign is_first="current" %} {% endif %}
+        {% if paginator.page == paginator.total_pages %}{% assign is_last="current" %} {% endif %}
         <li class="pagination-list-item {{is_first}}">
             <a href="/" class="page-number ">1</a>
         </li>
 
+        {% if paginator.total_pages > 4 %}
+
         <li class="pagination-list-item {{is_first}}">
             <a class="omit-control">...</a>
         </li>
-
-
-        {% if paginator.total_pages > 4 %}
 
             {% assign page_num_begin = paginator.page | minus: 1 %}
             {% assign page_num_end = paginator.page | plus: 1 %}
@@ -43,7 +43,11 @@
                 </li>
             {% endfor %}
 
-            {% else %}
+        <li class="pagination-list-item {{is_last}}">
+            <a class="omit-control">...</a>
+        </li>
+
+        {% else %}
                 {% assign page_num_end=paginator.total_pages | minus: 1 %}
                 {% for page_num in (2..page_num_end) %}
                     {% if page_num == paginator.page %}
@@ -58,12 +62,6 @@
                 {% endfor %}
         {% endif %}
 
-        
-
-        {% if paginator.page == paginator.total_pages %}{% assign is_last="current" %} {% endif %}
-        <li class="pagination-list-item {{is_last}}">
-            <a class="omit-control">...</a>
-        </li>
         <li class="pagination-list-item {{is_last}}">
             <a href="/blog/{{ paginator.total_pages }}" class="page-number ">
                 {{ paginator.total_pages }}
