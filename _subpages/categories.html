@@ -14,34 +14,45 @@ title: 分类
     {%- if site.categories.size > 0 -%}
     {% assign categories = site.categories %}
 
-    <div style="display: block;">
+    <div class="category-group">
+      <div class="category-header">
+        <img src="{{ "/assets/img/categories/category-d9.svg" | relative_url }}" alt="">
+        <h2>全部分类</h2>
+      </div>
 
-      <h2>全部分类</h2>
-
-      {% for category in categories %}
-
-      <a style="display: inline-block;margin-right: 10px;" href="#{{category[0]}}">
-        <div style="float: left;margin-right: 10px;">#{{ category[0] | upper }}</div>
-        <div style="float: left;">{{ category[1].size }}</div>
-      </a>
-
-      {% endfor %}
+      <div class="category-tag">
+        {% for category in categories %}
+        <a href="#{{category[0]}}" title="分类合计：{{ category[1].size }} 篇">
+          <img src="{{ "/assets/img/categories/category-tag.svg" | relative_url }}" alt="">
+          <div>{{ category[0] | upper }}</div>
+        </a>
+        {% endfor %}
+      </div>
     </div>
 
 
     {% for category in categories %}
-    <h2 class="category-anchor-float" id="{{ category[0] }}">{{ category[0] }}</h2>
-    <ul>
-      {%- for post in category[1] -%}
-      <li>
-        {%- assign date_format = site.data_formats.date_format_short | default: "%b %-d, %Y" -%}
-        <p style="display: inline;">{{ post.date | date: date_format }}</p>
-        <a href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
-      </li>
-      {%- endfor -%}
-    </ul>
+    <div class="category-section category-anchor-float" id="{{ category[0] }}">
+      <div class="category-section-header">
+        <img src="{{ "/assets/img/categories/category-d4.svg" | relative_url }}" alt="">
+        <h2>{{ category[0] }}</h2>
+      </div>
+
+
+      <ul class="category-list">
+        {%- for post in category[1] -%}
+        <li>
+          <div class="category-list-item">
+            {%- assign date_format = site.data_formats.date_format_short | default: "%b %-d, %Y" -%}
+            <p style="display: inline;">{{ post.date | date: date_format }}</p>
+            <a href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+          </div>
+        </li>
+        {%- endfor -%}
+      </ul>
+    </div>
     {% endfor %}
     {%- endif -%}
   </div>

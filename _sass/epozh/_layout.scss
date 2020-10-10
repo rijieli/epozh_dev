@@ -370,12 +370,12 @@
     white-space: nowrap; 
     text-overflow: ellipsis;
     font-size: 16px; 
-    color: #464647; 
+    color: $title-color; 
     font-weight: bold;
   }
 
   .item-link:visited {
-    color: #464647;
+    color: $title-color;
   }
   
   .item-link:hover {
@@ -541,7 +541,7 @@
     .category-header {
       margin: 10px 0px; 
       padding: 0px 15px;
-      color: #464647;
+      color: $title-color;
       font-weight: bold;
       font-size: 18px;
     }
@@ -591,6 +591,121 @@
 /** 
  * Category
  */
+.category-group {
+
+  margin-bottom: 20px;
+
+  .category-header {
+    font-size:18px;
+    display:flex; 
+    justify-content:left; 
+    align-content: center;
+    margin-bottom: 15px;
+
+    img {
+      margin-right: 14px;
+    }
+
+    h2 {
+      font-weight: bold;
+      font-size: 18px;
+      margin: 0;
+      color: $title-color;
+    }
+  }
+
+  .category-tag {
+    display:flex; 
+    flex-wrap:wrap; 
+    flex-direction: row;
+    margin-bottom: 15px;
+
+    a {
+      background-color: #F9F9F9;
+      display: flex;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      color: $grey-color;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 14px;
+
+      img {
+        margin-right: 14px;
+      }
+    }
+
+    a:hover {
+      color: $brand-color;
+    }
+
+    a:last-child {
+      margin-right: 0px;
+    }
+
+  }
+}
+.category-section {
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: 20px;
+
+  .category-list {
+
+    .category-list-item {
+      line-height: 1.2;
+      
+
+      display: flex;
+      margin-bottom: 10px;
+
+      p {
+        margin-right: 10px;
+        color: $grey-color;
+        min-width: 100px;
+        margin-bottom: 0px;
+      }
+
+      a {
+        color: $title-color;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: $brand-color;
+      }
+    }
+  }
+
+  @include media-query($on-palm) {
+    .category-list {
+      margin-left: 0;
+      list-style: none;
+    }
+  }
+}
+
+.category-section-header {
+  font-size:18px;
+  display:flex; 
+  justify-content:left; 
+  align-content: center;
+  margin-bottom: 10px;
+
+  img {
+    margin-right: 14px;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0;
+    color: $title-color;
+  }
+}
 
 .category-anchor-float::before {
   content: " ";
