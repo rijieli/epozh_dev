@@ -34,6 +34,9 @@ social:
     - https://weibo.com/lirijie1
 
 # Build settings
+
+timezone: Asia/Shanghai
+
 # theme: minima
 
 plugins:
