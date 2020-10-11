@@ -1,18 +1,43 @@
 ---
-layout: page
+layout: default
 title: 小物件
+header_index: 3
 permalink: /projects/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+<script>
+    document.querySelector("#header_idx_{{page.header_index}}").classList.add("current");
+</script>
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+<div class="wrapper">
+    <ol class="projects-list">
+        {% for item in site.data.projects %}
+        <li class="list-item" id="workitem-{{item.id}}">
+            <div class="image-wrapper">
+                <a href="{{ item.url }}" target="_blank">
+                    <img src="{{ item.img_path }}" alt="">
+                </a>
+            </div>
+            <div class="project-meta">
+                <div class="project-header">
+                    <div class="project-link">
+                        <a href="{{ item.url }}" target="_blank">{{item.title}}</a>
+                        <div class="project-link-meta">
+                            <div class="project-link-meta-visit">
+                                一些元信息 ·
+                                <span>{{ item.visit }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-button">
+                        <a href="{{item.url}}" target="_blank">查看项目</a>
+                    </div>
+                </div>
+                <div class="project-description">
+                    <div>{{item.desc}}</div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ol>
+</div>

@@ -1,0 +1,8 @@
+id,title,desc,img_path,url,platform,date,visit
+1,Jekyll Image Set,Jekyll 图像插件，获取一篇文章的图像集合，纯 Liquid 方式编写，适用于文章列表等。Jekyll 图像插件，获取一篇文章的图像集合，纯 Liquid 方式编写，适用于文章列表等。,/assets/img/sample_images/1.jpg,https://www.baidu.com,weibo,2019/1/1,1234
+2,Epozh.cn,个人网站 Epozh,/assets/img/sample_images/2.jpg,https://www.baidu.com,github,2019/1/2,2048
+3,Bookmark Duplicate Finder,搜索重复的书签，并采用一定策略进行合并。,/assets/img/sample_images/4.jpg,https://www.baidu.com,weixin,2019/1/3,2862
+4,Parse URL Scheme,IPA 文件批量拆包获取 URL-Scheme，适合制作快捷指令。,/assets/img/sample_images/3.jpg,https://www.baidu.com,zhihu,2019/1/4,3676
+5,商店自动运营脚本,商店自动切图，获取商品详情图像，自动更换水印。,/assets/img/sample_images/5.jpg,https://www.baidu.com,taobao,2019/1/5,4490
+6,媒体平台自动化运营,油猴脚本集合，用于获取 App Store 详情，公众号参数，将信息快速格式化，然后作为微博或者公众号文章素材。,/assets/img/sample_images/2.jpg,https://www.baidu.com,github,2019/1/6,1239
+7,公众号文章格式自动转换其他媒体平台,公众号文章 Markdown 快速转换为适合头条、知乎及微博头条文章格式。,/assets/img/sample_images/3.jpg,https://www.baidu.com,weixin,2019/1/7,2862

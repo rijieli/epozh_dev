@@ -1,0 +1,121 @@
+/**
+ * projects
+ */
+
+.projects-list {
+    display: block; 
+    list-style-type: none;
+    margin: 0px;
+    overflow: hidden;
+    padding-top: 30px;
+  
+    .list-item {
+        box-shadow: 0 1px 3px 0 rgba(18,18,18,.1);
+        border-radius: 5px;
+        height: 390px;
+        display: block;
+        float: left; 
+        margin: 10px;
+        margin-bottom: 10px;
+        width: calc(50% - 20px);
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .image-wrapper {
+        height: 200px;
+        position: relative;
+
+        img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+    }
+
+    .project-meta {
+        padding: 15px 20px;
+    }
+
+    .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $border-grey;
+        padding-bottom: 15px;
+    }
+    
+    .project-link {
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        font-weight: 600;
+
+        a {
+            color: $title-color;
+            letter-spacing: 0;
+            text-align: left;
+            overflow: hidden;
+            white-space: normal;
+            width: 100%;
+            word-break: break-all;
+        }
+
+        a:hover {
+            color: $brand-color;
+            text-decoration: none;
+        }
+    
+        .project-link-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #888;
+            margin: 2px 0px 0px 0px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+
+    .project-button {
+    
+        background: $brand-color-light;
+        padding: 5px 12px;
+        border-radius: 5px;
+        min-width: 60px;
+    
+        a {
+            font-weight: bold;
+            color: $brand-color;
+            font-size: 15px;
+            text-decoration: none;
+        }
+    }
+
+    .project-description {
+        padding-top: 15px;
+        height: 75px;
+        color: $excerpt-color;
+        overflow: hidden;
+    }
+
+    @include media-query($on-palm) {
+        .list-item {
+        width: 98%;
+        margin: 0px 1% 10px 1%;
+        }
+
+        
+    }
+
+    @include media-query($on-laptop) {
+        .project-button {
+            display: none;
+        }
+    }
+
+    p {
+        margin: 0px;
+    }
+}

@@ -364,7 +364,7 @@
 
   .item-date {
     font-size:14px;
-    color: #878686;
+    color: $excerpt-color;
     display: block;
     padding: 0px; 
     margin: 2px 0px;
@@ -390,7 +390,7 @@
   .item-excerpt {
     margin:0px;
     font-size: 14px;
-    color: #878686;
+    color: $excerpt-color;
     display:block; 
     overflow: hidden; 
     white-space: nowrap; 
