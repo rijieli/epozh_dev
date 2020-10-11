@@ -24,7 +24,7 @@ title: 博客
         {% assign show_except_image = "with-image" %}
         {% endif %}
         <li class="list-item">
-          <div style="margin: 10px 0px; display: flex; justify-content: space-between;">
+          <div class="list-item-wrapper">
             <div class="list-item-meta {{show_except_image}}">
               {%- assign date_format = site.data_formats.date_format | default: "%b %-d, %Y" -%}
               <p class="item-date">

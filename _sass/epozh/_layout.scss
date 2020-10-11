@@ -344,8 +344,14 @@
     border-bottom: 1px $border-grey solid;
     padding: 0px 10px;
 
+    .list-item-wrapper {
+      margin: 10px 0px; 
+      display: flex; 
+      justify-content: space-between;
+      align-items: center;
+    }
+
     .list-item-meta {
-      height:100px;
       margin: 0px; 
       padding: 0px;
       vertical-align: middle; 
@@ -366,12 +372,10 @@
 
   .item-link {
     display: block;
-    overflow: hidden; 
-    white-space: nowrap; 
-    text-overflow: ellipsis;
     font-size: 16px; 
     color: $title-color; 
     font-weight: bold;
+    word-break: break-all;
   }
 
   .item-link:visited {
