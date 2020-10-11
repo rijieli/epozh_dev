@@ -77,8 +77,8 @@ show_excerpt_image: true
 
 def generate_site():
     CATEGORY_CSV_PATH = os.getcwd() + '/_data/works_category.csv'
-    WORKS_SUBPAGE_PATH = os.getcwd() + '/subpage/works/'
-    WORKS_SUBPAGE_TEMPLATE = os.getcwd() + '/subpage/works.html'
+    WORKS_SUBPAGE_PATH = os.getcwd() + '/_subpages/works/'
+    WORKS_SUBPAGE_TEMPLATE = os.getcwd() + '/_subpages/works.html'
     if(not os.path.exists(WORKS_SUBPAGE_PATH)):
         os.mkdir(WORKS_SUBPAGE_PATH)
 
@@ -111,7 +111,7 @@ current_page_platform: {2}'''.format(category[1], category[0], category[0])
             write_file.write(works_template.replace(
                 replace_anchor, front_matter_fragement))
     
-    print("All Works Subpage Generate at: ./subpage/works/")
+    print("All Works Subpage Generate at: ./_subpages/works/")
 
 
 if __name__ == "__main__":
