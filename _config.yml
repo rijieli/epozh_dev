@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: 日杰 RIJIE
+title: EPOZH
 email: rijie.li@outlook.com
 description: For serve.
 baseurl: "" # the subpath of your site, e.g. /blog
