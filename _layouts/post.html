@@ -9,26 +9,38 @@ layout: default
 </script>
 <div class="wrapper">
   <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
-    <header class="post-header">
-      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <div class="post-header">
+      <a class="post-back-button" href="javascript:history.back(-1);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" stroke="#000" stroke-width="2"
+          class="blog-header__title__icon">
+          <path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M7 3L4 6l3 3"></path>
+        </svg>
+        返回
+      </a>
       <div class="post-meta">
-        <time class="post-meta-date" class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        <time class="post-meta-date" class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"
+          itemprop="datePublished">
           {{ page.date | date: site.data_formats.date_format_short }}
         </time>
-
+        
+        {% if page.author %}
         <span class="post-meta-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <span class="p-author h-card" itemprop="name">{{ page.author | default: "RIJIE"}}</span>
+          <span class="p-author h-card" itemprop="name">{{ page.author }}</span>
         </span>
-
+        {% endif %}
+    
         {%- if page.categories -%}
-          {% for category in page.categories %}
-            <div class="post-meta-cate">
-              <a href="/categories/#{{category}}">#{{category}}</a>
-            </div>
-          {% endfor %}
+        {% for category in page.categories %}
+        <div class="post-meta-cate">
+          <a href="/categories/#{{category}}">#{{category}}</a>
+        </div>
+        {% endfor %}
         {%- endif-%}
       </div>
+    </div>
+
+    <header class="post-title-wrapper">
+      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>      
     </header>
 
     <div class="post-content e-content" itemprop="articleBody">
