@@ -6,13 +6,25 @@ Usage: ./manage.py [-cgv] [input]
 
 -c:     create post
 -g:     generate static templates
--v:     do some check job"""
+-v:     do some check job
+-m:     covert a normal markdown file to jekyll format"""
 
-import csv
-import datetime
-import os
-import sys
+import csv, datetime, os, sys, re
+import shutil
 
+POST_PATH = os.getcwd() + "/_posts/"
+POST_IMAGE_PATH = os.getcwd() + "/assets/img/posts/"
+POST_IMAGE_PREFIX = "/assets/img/posts/"
+FRONT_MATTER_TEMPLATE = '''\
+---
+layout: post
+title: {title}
+date: {date}
+categories: 未分类
+show_excerpt_image: true
+---
+
+'''
 
 def show_usage():
     description = """Site Manage Scripts
@@ -21,7 +33,8 @@ Usage: ./manage.py [-cgv] [input]
 
 -c:     create post
 -g:     generate static templates
--v:     do some check job"""
+-v:     do some check job
+-m:     covert a normal markdown file to jekyll format"""
     print(description)
 
 
@@ -31,6 +44,12 @@ def do_check():
     """
     print("HTML Valid Report (Not Implemented)")
 
+def get_current_date():
+    TIME_ZONE = "+0800"
+    post_createat = datetime.datetime.now()
+    short_time = post_createat.strftime('%Y-%m-%d')
+    long_time = post_createat.strftime('%Y-%m-%d %H:%M:%S ') + TIME_ZONE
+    return {"short": short_time, "long": long_time}
 
 def create_post(user_input):
 
@@ -39,26 +58,13 @@ def create_post(user_input):
     else:
         title = "post"
 
-    # modify this to your time zone.
-    TIME_ZONE = "+0800"
-
     # standard filename format: date and title
-    post_createat = datetime.datetime.now()
-    filename = post_createat.strftime(
-        '%Y-%m-%d-') + title.lower().replace(" ", "-") + '.md'
-    post_date = post_createat.strftime('%Y-%m-%d %H:%M:%S ') + TIME_ZONE
+    post_createat = get_current_date()
+    filename = post_createat["short"] + "-" + title.lower().replace(" ", "-") + '.md'
+    post_date = post_createat["long"]
 
     # create Liquid front matter
-    front_matter = '''\
----
-layout: post
-title: {title}
-date: {date}
-categories: 未分类
-show_excerpt_image: true
----
-
-'''.format(title=title.replace('-', ' ').capitalize(), date=post_date)
+    front_matter = FRONT_MATTER_TEMPLATE.format(title=title.replace('-', ' ').capitalize(), date=post_date)
 
     # if we're in a jekyll root, pop it in ./_posts
     if(os.path.exists(os.getcwd() + '/_posts')):
@@ -113,6 +119,52 @@ current_page_platform: {2}'''.format(category[1], category[0], category[0])
     
     print("All Works Subpage Generate at: ./_subpages/works/")
 
+def modify_post(filepath):
+    # Check file format
+    if(not filepath.endswith(".md") and (not filepath.endswith(".markdown"))):
+        print("Only support .md or .markdown file.")
+        return
+
+    filename = filepath.split("/")[-1]
+    
+    # Get file content
+    md_content = ""
+    with open(filepath, 'r') as md_file:
+        md_content = md_file.read()
+    
+    # Get new filename
+    post_createat = get_current_date()
+    file_output_name = post_createat["short"] + "-" + filename
+    file_output_path = POST_PATH + file_output_name
+
+    post_date = post_createat["long"]
+    front_matter = FRONT_MATTER_TEMPLATE.format(title=filename.replace(
+        '-', ' ').capitalize().replace('.md', ""), date=post_date)
+    md_content = front_matter + md_content + "\n"
+
+    # Check if contains image tag
+    IF_CONTAINS_IMAGE = (md_content.index("![](") != -1)
+
+    if(IF_CONTAINS_IMAGE):
+        # Move image folder to assests
+        image_orig_path = "./_posts/" + filename.replace(".md", "")
+        image_target_path = POST_IMAGE_PATH + filename.replace(".md", "")
+        if(os.path.exists(image_orig_path)):
+            shutil.move(image_orig_path, image_target_path)
+            print("Image folder has been moved: " + image_target_path)
+        else:
+            print("Require post image folder: " + image_orig_path)
+
+        # Replace image uri to website uri
+        regex = r"!\[\w*\]\([\w\-\/\.]*\)"
+        pattern = re.compile(regex)
+        md_content = pattern.sub(lambda s : s.group().replace("](", "](" + POST_IMAGE_PREFIX), md_content)
+
+    with open(file_output_path, "w") as post_md:
+        post_md.write(md_content)
+    os.remove(filepath)
+    print("Post publised at: " + file_output_path)
+
 
 if __name__ == "__main__":
     # set title to command-line argument, or default
@@ -127,3 +179,5 @@ if __name__ == "__main__":
         generate_site()
     elif (system_args[1] == "-v"):
         do_check()
+    elif (system_args[1] == "-m"):
+        modify_post(system_args[2])
