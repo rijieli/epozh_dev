@@ -37,6 +37,8 @@ social:
 
 timezone: Asia/Shanghai
 
+google_analytics: UA-180501470-1
+
 # theme: minima
 
 plugins:
