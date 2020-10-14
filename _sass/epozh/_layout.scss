@@ -466,6 +466,11 @@
     word-break: break-all;
   }
 
+  img {
+    cursor: zoom-in;
+    width: 100%;
+  }
+
   h1 {
     @include relative-font-size(1.5);
     font-weight: bold;
@@ -526,6 +531,34 @@
     }
   }
 
+}
+
+.post-image-viewer {
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  text-align: center;
+  cursor: zoom-out;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+
+  .image-viewer-wrapper {
+    position: relative;
+    height: 100%;
+  }
+  
+  img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
 }
 
 /** 

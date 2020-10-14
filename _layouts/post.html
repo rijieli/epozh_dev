@@ -67,4 +67,23 @@ layout: default
 
 
   {% include scroll_to_top.html %}
+
+  <div class="post-image-viewer">
+    <div class="image-viewer-wrapper">
+      <img src="">
+    </div>
+  </div>
+
 </div>
+
+<script>
+  let imgDom = document.querySelector(".post-image-viewer");
+  document.querySelectorAll(".post-content img").forEach(e=>e.addEventListener("click", showImage))
+  imgDom.addEventListener("click", e=>imgDom.style.display="none");
+
+  function showImage(evt) {
+    let imgDomImage = document.querySelector(".post-image-viewer img");
+    imgDomImage.src = evt.target.src;
+    imgDom.style.display = "block";
+  }
+</script>
