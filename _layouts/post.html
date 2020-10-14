@@ -40,7 +40,13 @@ layout: default
     </div>
 
     <header class="post-title-wrapper">
-      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>      
+      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+      {% if page.author %}
+      <div class="original-sign">
+        <div class="original-tag">非</div>
+        <span class="tooltip">非原创</span>
+      </div>
+      {% endif %}
     </header>
 
     <div class="post-content e-content" itemprop="articleBody">
