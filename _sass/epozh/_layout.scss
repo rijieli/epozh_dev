@@ -298,7 +298,7 @@
     }
 
     a {
-      color: $brand-color;
+      color: $grey-color-dark;
     }
   }
 
@@ -455,15 +455,12 @@
 }
 
 .post-title {
-  @include relative-font-size(1.8);
+  @include relative-font-size(1.5);
   letter-spacing: -1px;
   line-height: 1.5;
   font-weight: bold;
   margin-bottom: 0px;
-
-  @include media-query($on-laptop) {
-    @include relative-font-size(1.6);
-  }
+  letter-spacing: 0.2px;
 }
 
 .post-meta {
@@ -549,6 +546,10 @@
     @include media-query($on-laptop) {
       @include relative-font-size(1.125);
     }
+  }
+
+  li {
+    line-height: 32px;
   }
 }
 
