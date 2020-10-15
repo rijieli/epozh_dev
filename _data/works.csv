@@ -1,11 +1,3 @@
-id,title,img_path,url,platform,date,visit
-1,西方国家会因为大规模民众抗议改变某项政策吗？,/assets/img/sample_images/1.jpg,https://www.baidu.com,weibo,2019/1/1,1234
-2,如何看待 9 月 29 日香港中区军用码头移交驻港部队？,/assets/img/sample_images/2.jpg,https://www.baidu.com,github,2019/1/2,2048
-3,想要全心全意依靠耶和华，但却害怕他对我的旨意就是永远让我居人之下，而被人瞧不起、被压制?,/assets/img/sample_images/4.jpg,https://www.baidu.com,weixin,2019/1/3,2862
-4,Getting started with writing and formatting on GitHub,/assets/img/sample_images/3.jpg,https://www.baidu.com,zhihu,2019/1/4,3676
-5,学习哲学是一种什么样的体验？,/assets/img/sample_images/5.jpg,https://www.baidu.com,taobao,2019/1/5,4490
-6,爱斯基摩人给雪起的30种不同名字是哪些？,/assets/img/sample_images/2.jpg,https://www.baidu.com,github,2019/1/6,1239
-7,大学游泳课男女不分开，会有男生脱光上身或女生穿比基尼的情况吗？,/assets/img/sample_images/3.jpg,https://www.baidu.com,weixin,2019/1/7,2862
-8,如何看待 10 月 2 日晚至 3 日早上，加拿大军舰由南向北穿越「台湾海峡」前往东海？,/assets/img/sample_images/1.jpg,https://www.baidu.com,zhihu,2019/1/8,3676
-9,Getting started with writing and formatting on GitHub,/assets/img/sample_images/2.jpg,https://www.baidu.com,weixin,2019/1/9,4490
-10,《王者荣耀》皮肤到底除了10点ad加成还有什么用，真的有隐藏属性吗？,/assets/img/sample_images/5.jpg,https://www.baidu.com,weixin,2019/1/10,2048
+id,title,img_path,url,platform,date,data_type,data_value,data_desc
+1,PriceTag应用推荐,/assets/img/works/works-weibo-pricetag.jpg,https://weibo.com/u/6087949803,weibo,2019/1/1,follow,44616,
+2,捷径社区,/assets/img/works/works-operation-sharecuts.jpg,https://sharecuts.cn,operation,2019/1/2,user,300K,数据为 2020 年 6 月

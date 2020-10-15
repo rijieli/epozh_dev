@@ -36,8 +36,8 @@ header_index: 2
                             <span>{{ platform_detail.name }}</span>
                         </div>
                         <div class="work-link-meta-visit">
-                            <img src="{{ "/assets/img/works/works-visit-icon.svg" | relative_url }}" alt="">
-                            <span>{{ item.visit }}</span>
+                            <img src="{{ "/assets/img/works/works-" | append: item.data_type | append: "-icon.svg" | relative_url }}" alt="">
+                            <span>{{ item.data_value }}</span>
                         </div>
                     </div>
                 </div>
