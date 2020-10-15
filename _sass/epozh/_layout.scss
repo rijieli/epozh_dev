@@ -513,7 +513,8 @@
     color: $post-font-color;
     line-height: 32px;
     margin-bottom: 20px;
-    word-break: break-all;
+    word-break: normal;
+    overflow-wrap: anywhere;
   }
 
   img {
