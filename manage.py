@@ -55,6 +55,8 @@ def create_post(user_input):
 
     if (len(user_input) > 1):
         title = "-".join(user_input)
+    elif (len(user_input) == 1):
+        title = user_input[0]
     else:
         title = "post"
 
