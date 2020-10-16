@@ -19,10 +19,10 @@ header_index: 2
             {%- if item.platform == page.current_page_platform or page.current_page_platform == "all" -%}
             <li class="list-item" id="workitem-{{item.id}}">
                 <div class="image-wrapper">
-                    <div class="work-data">
+                    <!-- <div class="work-data">
                         {%- assign date_format = site.data_formats.date_format | default: "%b %-d, %Y" -%}
                         <p>{{ item.date | date: date_format }}</p>
-                    </div>
+                    </div> -->
                     <a href="{{ item.url }}">
                         <img src="{{ item.img_path }}" alt="">
                     </a>
@@ -35,9 +35,14 @@ header_index: 2
                             {% assign platform_detail = site.data.works_category | where: "platform", item.platform | first %}
                             <span>{{ platform_detail.name }}</span>
                         </div>
-                        <div class="work-link-meta-visit">
+                        
+                        <div class="work-link-meta-visit" title="{{item.data_desc}}">
                             <img src="{{ "/assets/img/works/works-" | append: item.data_type | append: "-icon.svg" | relative_url }}" alt="">
+                            {% if item.data_value != "hide" %}
                             <span>{{ item.data_value }}</span>
+                            {% else %}
+                            <span style="filter:blur(3px);width: 30px;">Hide</span>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
