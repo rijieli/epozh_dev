@@ -3,7 +3,9 @@
     <ul class="pagination-list">
         <li class="pagination-side prev">
             {% if paginator.previous_page %}
-            <a href="{{ paginator.previous_page_path }}">上一页</a>
+            <a href="{{ paginator.previous_page_path }}">
+                <img src="{{ "/assets/img/prev-button.svg" | relative_url }}" alt="上一页" >
+            </a>
             {% endif %}
         </li>
 
@@ -71,7 +73,9 @@
 
         <li class="pagination-side next">
             {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path }}">下一页</a>
+            <a href="{{ paginator.next_page_path }}">
+                <img src="{{ "/assets/img/next-button.svg" | relative_url }}" alt="下一页" >
+            </a>
             {% endif %}
         </li>
     </ul>
