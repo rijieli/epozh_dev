@@ -6,7 +6,7 @@ categories: 工具
 show_excerpt_image: true
 ---
 
-![](/assets/img/posts/capture-https-traffic-using-charles/header.jpg)
+![](/assets/img/posts/capture-https-traffic-using-charles/Header.jpg)
 
 在用爬虫抓取公众号文章阅读量时遇到了解析 HTTPS 请求的问题。原理上各种工具都利用中间人攻击（Man-in-the-Middle Attack）的方式获取解密后的请求内容，实现这一步的基础就是中间人的证书被系统认可。
 
