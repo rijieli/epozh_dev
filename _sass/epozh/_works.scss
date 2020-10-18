@@ -81,7 +81,7 @@
         font-size: 15px;
 
         a {
-            color: #3D3D3D;
+            color: $link-color;
             letter-spacing: 0;
             text-align: left;
             overflow: hidden;
@@ -100,7 +100,8 @@
             display: flex;
             justify-content: space-between;
             color: #888;
-            margin: 2px 0px 0px 0px
+            margin-top: 4px;
+            font-size: 15px;
         }
 
         .work-link-meta-platform {
@@ -168,8 +169,22 @@
     }
 
     .works-cate-highlight {
-        color: #3d3d3d;
+        color: $link-color;
         font-weight: bold;
+    }
+
+    .works-filter-list {
+        display: inline; 
+        line-height: 60px; 
+        margin: 0;
+    }
+
+    .works-filter-item {
+        list-style: none; 
+        display: inline; 
+        margin: 10px; 
+        font-size: 15px; 
+        text-align: center;
     }
 }
   

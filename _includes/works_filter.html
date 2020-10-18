@@ -5,14 +5,14 @@
         {% assign highlight_class = "works-cate-highlight" %}
     {% endif %}
 
-    <ul style="display: inline; line-height: 60px; margin: 0;">
-        <li style="list-style: none; display: inline; margin: 10px; font-size: 15px; text-align: center;">
+    <ul class="works-filter-list" >
+        <li class="works-filter-item">
             <a class="{{highlight_class}}" href="/works/">所有</a>
         </li>
         {% assign work_platforms =  site.data.works | map: "platform" | compact | uniq %}
         {% for platform in work_platforms %}
         {% assign platform_detail = site.data.works_category | where: "platform",platform | first %}
-        <li style="list-style: none; display: inline; margin: 10px; font-size: 15px; text-align: center;">
+        <li class="works-filter-item">
             {% if platform == current_page %}
             <a class="works-cate-highlight" href="/works/{{platform}}">{{ platform_detail.name }}</a>
             {% else %}
