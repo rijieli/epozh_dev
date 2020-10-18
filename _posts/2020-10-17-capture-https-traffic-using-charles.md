@@ -6,6 +6,8 @@ categories: 工具
 show_excerpt_image: true
 ---
 
+![](/assets/img/posts/capture-https-traffic-using-charles/header.jpg)
+
 在用爬虫抓取公众号文章阅读量时遇到了解析 HTTPS 请求的问题。原理上各种工具都利用中间人攻击（Man-in-the-Middle Attack）的方式获取解密后的请求内容，实现这一步的基础就是中间人的证书被系统认可。
 
 抓包工具有许多，推荐使用 Charles，同时有非常多的同类如 Surge、Wireshark、Fiddler 等等可以选择。
