@@ -7,10 +7,12 @@ Usage: ./manage.py [-cgv] [input]
 -c:     create post
 -g:     generate static templates
 -v:     do some check job
--m:     covert a normal markdown file to jekyll format"""
+-m:     covert a normal markdown file to jekyll format
+-wd:    parse weixin article meta data"""
 
 import csv, datetime, os, sys, re
 import shutil
+from _manage.weixindata import write_csv
 
 POST_PATH = os.getcwd() + "/_posts/"
 POST_IMAGE_PATH = os.getcwd() + "/assets/img/posts/"
@@ -26,16 +28,6 @@ show_excerpt_image: true
 
 '''
 
-def show_usage():
-    description = """Site Manage Scripts
-
-Usage: ./manage.py [-cgv] [input]
-
--c:     create post
--g:     generate static templates
--v:     do some check job
--m:     covert a normal markdown file to jekyll format"""
-    print(description)
 
 
 def do_check():
@@ -169,12 +161,11 @@ def modify_post(filepath):
 
 
 if __name__ == "__main__":
-    # set title to command-line argument, or default
 
     system_args = sys.argv
 
     if (len(system_args) <= 1):
-        show_usage()
+        print(__doc__)
     elif (system_args[1] == "-c"):
         create_post(system_args[2:])
     elif (system_args[1] == "-g"):
@@ -183,3 +174,5 @@ if __name__ == "__main__":
         do_check()
     elif (system_args[1] == "-m"):
         modify_post(system_args[2])
+    elif (system_args[1] == "-wd"):
+        write_csv()
