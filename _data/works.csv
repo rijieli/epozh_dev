@@ -1,7 +1,7 @@
-id,title,author,img_path,alt_image_url,url,platform,date,data_type,data_value,data_desc
+id,title,author,img_path,alt_img_url,url,platform,date,data_type,data_value,data_desc
 1,PriceTag应用推荐,,/assets/img/works/works-weibo-pricetag.jpg,,https://weibo.com/u/6087949803,weibo,2019/1/1,follow,44616,粉丝数量
 2,捷径社区,,/assets/img/works/works-operation-sharecuts.jpg,,https://sharecuts.cn,operation,2019/1/2,user,hide,数据为 2020 年 6 月
 3,Price Tag App,,/assets/img/works/works-operation-pricetag.jpg,,/assets/img/works/works-operation-pricetag-hd.jpg,operation,2019/1/2,user,hide,数据为 2020 年 1 月
-4,,,,,https://mp.weixin.qq.com/s/-y8d-65hRDNPXB13EWlMTA,weixin,,visit,31000,
-5,,,,,https://mp.weixin.qq.com/s/KIHCKdxAlvX8PXjZsWDytg,weixin,,visit,3520,
-6,,,,,https://mp.weixin.qq.com/s/NeI2Wyz-0dQFwU4HLRxVOQ,weixin,,visit,4585,
+,,,,,https://mp.weixin.qq.com/s/-y8d-65hRDNPXB13EWlMTA,weixin,,visit,31000,
+,,,,,https://mp.weixin.qq.com/s/KIHCKdxAlvX8PXjZsWDytg,weixin,,visit,3520,
+,,,,,https://mp.weixin.qq.com/s/NeI2Wyz-0dQFwU4HLRxVOQ,weixin,,visit,4585,
