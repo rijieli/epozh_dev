@@ -36,6 +36,7 @@ def requestHTML(url):
     else:
         raise ConnectionError()
 
+
 def parseData(content, match_group):
     '''
     正则表达式逐个匹配关键信息
@@ -79,7 +80,7 @@ def get_image(img_url, row):
         img_url += "http://"
 
     target_path = "./assets/img/works/posts/" + \
-        "{id}.jpeg".format(id=row["id"])
+        "{id}.jpeg".format(id=row["url"][-6:])
 
     r = requests.get(img_url)
     local_file = open(target_path, "wb")
@@ -106,11 +107,18 @@ def get_info(row: OrderedDict):
 
     # Add local image path
     row["img_path"] = "/assets/img/works/posts/" + \
-        "{id}.jpeg".format(id=row["id"])
-
+        "{id}.jpeg".format(id=row["url"][-6:])
 
     print("解析成功：#" + row["id"] + " " + row["title"])
     return ",".join(row.values())
+
+
+def fill_default(row):
+    if not row["platform"] and ("weixin" in row["url"]):
+        row["platform"] = "weixin"
+
+    if not row["data_type"] and ("weixin" in row["url"]):
+        row["data_type"] = "visit"
 
 
 def write_csv():
@@ -127,9 +135,8 @@ def write_csv():
             else:
                 row_idx += 1
                 row["id"] = str(row_idx)
-
-            if not row["platform"] and ("weixin" in row["url"]) :
-                row["platform"] = "weixin"
+            
+            fill_default(row)
 
             if not row["title"] and row["url"]:
                 filed_row = get_info(row)
