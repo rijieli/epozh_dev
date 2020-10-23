@@ -24,11 +24,11 @@ header_index: 2
                         <p>{{ item.date | date: date_format }}</p>
                     </div> -->
                     <a href="{{ item.url }}">
-                        <img src="{{ item.img_path }}" alt="">
+                        <img src="{{ item.img_path }}" alt="{{item.title}}">
                     </a>
                 </div>
                 <div class="work-link">
-                    <a href="{{ item.url }}">{{item.title}}</a>
+                    <a href="{{ item.url }}">{{item.name}}</a>
                     <div class="work-link-meta">
                         <div class="work-link-meta-platform">
                             <img src="{{ "/assets/img/sns_icon/"| append: item.platform | append: "-roundC888.svg" | relative_url }}" alt="">
