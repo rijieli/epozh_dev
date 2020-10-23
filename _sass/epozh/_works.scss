@@ -187,4 +187,13 @@
         text-align: center;
     }
 }
+
+@include media-query($on-palm) {
+    .works-filter {
+        height: 50px;
+        .works-filter-list {
+            line-height: 50px;
+        }
+    }
+}
   
