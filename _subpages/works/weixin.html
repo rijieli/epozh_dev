@@ -36,6 +36,7 @@ header_index: 2
                             <span>{{ platform_detail.name }}</span>
                         </div>
                         
+                        {% if item.data_value %}
                         <div class="work-link-meta-visit" title="{{item.data_desc}}">
                             <img src="{{ "/assets/img/works/works-" | append: item.data_type | append: "-icon.svg" | relative_url }}" alt="">
                             {% if item.data_value != "hide" %}
@@ -44,6 +45,7 @@ header_index: 2
                             <span style="filter:blur(3px);width: 30px;">Hide</span>
                             {% endif %}
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </li>
