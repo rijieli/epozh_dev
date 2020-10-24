@@ -96,7 +96,7 @@ def generate_site():
     with open(WORKS_SUBPAGE_TEMPLATE) as template_file:
         works_template = template_file.read()
 
-    replace_anchor = '''title: 作品
+    replace_anchor = '''title: 工作
 permalink: /works/
 current_page_platform: all'''
 

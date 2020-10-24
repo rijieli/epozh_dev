@@ -68,6 +68,10 @@ exclude:
   - CNAME
   - .gitignore
   - _manage
+  - Gemfile
+  - Gemfile.lock
+  - .sass-cache/
+  - .jekyll-cache/
 
 include:
   - _subpages
@@ -88,8 +92,6 @@ paginate_path: "/blog/:num/"
 # their entries' file path in the `include:` list.
 #
 # exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
 #   - gemfiles/
 #   - Gemfile
 #   - Gemfile.lock
