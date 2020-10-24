@@ -31,14 +31,14 @@ header_index: 2
                     <a href="{{ item.url }}">{{item.title}}</a>
                     <div class="work-link-meta">
                         <div class="work-link-meta-platform">
-                            <img src="{{ "/assets/img/sns_icon/"| append: item.platform | append: "-roundC888.svg" | relative_url }}" alt="">
+                            <img src="{{ "/assets/img/sns_icon/"| append: item.platform | append: "-roundC888.svg" | relative_url }}" alt="{{item.platform}}">
                             {% assign platform_detail = site.data.works_category | where: "platform", item.platform | first %}
                             <span>{{ platform_detail.name }}</span>
                         </div>
                         
                         {% if item.data_value %}
                         <div class="work-link-meta-visit" title="{{item.data_desc}}">
-                            <img src="{{ "/assets/img/works/works-" | append: item.data_type | append: "-icon.svg" | relative_url }}" alt="">
+                            <img src="{{ "/assets/img/works/works-" | append: item.data_type | append: "-icon.svg" | relative_url }}" alt="{{item.data_type}}">
                             {% if item.data_value != "hide" %}
                             <span>{{ item.data_value }}</span>
                             {% else %}
