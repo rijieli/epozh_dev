@@ -182,9 +182,13 @@
     .works-filter-item {
         list-style: none; 
         display: inline; 
-        margin: 10px; 
+        margin-right: 10px; 
         font-size: 15px; 
         text-align: center;
+    }
+
+    .works-filter-item:last-child {
+        margin-right: 0px;
     }
 }
 
