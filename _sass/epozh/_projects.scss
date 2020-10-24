@@ -23,7 +23,7 @@
     }
 
     .image-wrapper {
-        height: 200px;
+        // height: 200px;
         position: relative;
 
         img {
@@ -32,6 +32,16 @@
             object-fit: cover;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
+        }
+    }
+
+    @include media-query($on-palm) {
+        .list-item {
+            height: 350px;
+        }
+
+        .image-wrapper img {
+            height: 160px;
         }
     }
 
