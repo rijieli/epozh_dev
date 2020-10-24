@@ -15,7 +15,7 @@ permalink: /projects/
         <li class="list-item" id="workitem-{{item.id}}">
             <div class="image-wrapper">
                 <a href="{{ item.url }}" target="_blank">
-                    <img src="{{ item.img_path }}" alt="">
+                    <img src="{{ item.img_path }}" alt="{{item.desc}}">
                 </a>
             </div>
             <div class="project-meta">
@@ -24,8 +24,9 @@ permalink: /projects/
                         <a href="{{ item.url }}" target="_blank">{{item.title}}</a>
                         <div class="project-link-meta">
                             <div class="project-link-meta-visit">
-                                一些元信息 ·
-                                <span>{{ item.visit }}</span>
+                                {% assign project_lang = item.lang | downcase %}
+                                <img src="{{ "/assets/img/lang_icon/lang-"| append: project_lang | append: ".svg" | relative_url }}" alt="{{ item.lang }}">
+                                <span>{{ item.lang }}</span>
                             </div>
                         </div>
                     </div>
