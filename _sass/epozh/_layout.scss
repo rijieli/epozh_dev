@@ -173,12 +173,16 @@
     display: none;
   }
 
+  .trigger {
+    font-size: 15px;
+  }
+
   .page-link {
     color: $grey-color-lighter;
     font-weight: bold;
     display: inline-block;
     line-height: 54px;
-    font-size: 15px;
+    
     height: 54px;
     box-sizing: border-box;
     padding: 0px 1px;
