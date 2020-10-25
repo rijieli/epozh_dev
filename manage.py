@@ -137,7 +137,7 @@ def modify_post(filepath):
     md_content = front_matter + md_content + "\n"
 
     # Check if contains image tag
-    IF_CONTAINS_IMAGE = (md_content.index("![](") != -1)
+    IF_CONTAINS_IMAGE = "![](" in md_content
 
     if(IF_CONTAINS_IMAGE):
         # Move image folder to assests
