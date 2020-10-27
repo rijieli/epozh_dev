@@ -8,6 +8,10 @@
     margin: 0px;
     overflow: hidden;
     padding-top: 30px;
+
+    .no-url {
+        cursor: not-allowed;
+    }
   
     .list-item {
         box-shadow: 0 1px 3px 0 rgba(18,18,18,.1);

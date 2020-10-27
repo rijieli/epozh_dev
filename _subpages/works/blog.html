@@ -17,18 +17,25 @@ header_index: 2
         <ol class="works-list">
             {% for item in site.data.works %}
             {%- if item.platform == page.current_page_platform or page.current_page_platform == "all" -%}
+            {% if item.url.size > 0 %}
+            {% assign item_url = item.url %}
+            {% assign no_url = ""%}
+            {% else %}
+            {% assign item_url = "javascript:return false;" %}
+            {% assign no_url = "no-url"%}
+            {% endif %}
             <li class="list-item" id="workitem-{{item.id}}">
                 <div class="image-wrapper">
                     <!-- <div class="work-data">
                         {%- assign date_format = site.data_formats.date_format | default: "%b %-d, %Y" -%}
                         <p>{{ item.date | date: date_format }}</p>
                     </div> -->
-                    <a href="{{ item.url }}">
+                    <a class="{{no_url}}" href="{{ item_url }}">
                         <img src="{{ item.img_path }}" alt="{{item.title}}" loading="lazy">
                     </a>
                 </div>
                 <div class="work-link">
-                    <a href="{{ item.url }}">{{item.title}}</a>
+                    <a class="{{no_url}}" href="{{ item_url }}">{{item.title}}</a>
                     <div class="work-link-meta">
                         <div class="work-link-meta-platform">
                             <img src="{{ "/assets/img/sns_icon/"| append: item.platform | append: "-roundC888.svg" | relative_url }}" alt="{{item.platform}}">
