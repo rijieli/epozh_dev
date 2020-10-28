@@ -1,0 +1,25 @@
+<div class="category-tag">
+
+    <script>
+        document.querySelectorAll(".category-tag a").forEach(e => e.addEventListener("click", function (){
+            document.querySelector("#nav-trigger").checked=false
+        }))
+    </script>
+
+    {% for category in include.categories %}
+    <a href="/categories/#{{category[0]}}" title="分类合计：{{ category[1].size }} 篇">
+        <svg width="11px" height="15px" viewBox="0 0 11 15" version="1.1" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <title>Path</title>
+            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="category/tag" transform="translate(-12.000000, -7.000000)" fill="#828282" fill-rule="nonzero">
+                    <path
+                        d="M23,22 L23,8.07156096 C23,7.47812535 22.5069995,7 21.9,7 L13.1,7 C12.4930005,7 12,7.47812535 12,8.07156096 L12,22 L17.5,17.7147021 L23,22 Z"
+                        id="Path"></path>
+                </g>
+            </g>
+        </svg>
+        <div>{{ category[0] | upper }}</div>
+    </a>
+    {% endfor %}
+</div>
