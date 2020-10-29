@@ -170,6 +170,7 @@
 .trigger {
   float: right;
   font-size: 15px;
+  -webkit-font-smoothing: antialiased;
   z-index: 2;
 
   .page-link {
