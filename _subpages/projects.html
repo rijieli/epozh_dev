@@ -12,7 +12,7 @@ permalink: /projects/
 <div class="wrapper">
     <ol class="projects-list">
         {% for item in site.data.projects %}
-        <li class="list-item" id="workitem-{{item.id}}">
+        <li class="list-item" id="project-{{item.id}}">
             <div class="image-wrapper">
                 <a href="{{ item.url }}" target="_blank">
                     <img src="{{ item.img_path }}" alt="{{item.desc}}" loading="lazy">
