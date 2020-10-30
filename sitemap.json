@@ -1,0 +1,42 @@
+---
+---
+{
+  "Post":[
+    {% for post in site.posts %}
+      {
+        "title"    : "{{ post.title | escape }}",
+        "category" : "{{ post.categories | first }}",
+        "tags"     : "{{ post.tags | join: ', ' }}",
+        "url"      : "{{ site.baseurl }}{{ post.url }}",
+        "date"     : "{{ post.date }}"
+      } {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ],
+  "Work": [
+    {% for work in site.data.works %}
+      {
+        "title"   : "{{work.title | escape}}",
+        "url"     : "/works#workitem-{{work.id}}"
+      }
+      {% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  ],
+  "Code": [
+    {% for work in site.data.projects %}
+      {
+        "title"   : "{{work.title | escape}}",
+        "url"     : "/projects/#project-{{work.id}}"
+      }
+      {% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  ],
+  "Category": [
+    {% for category in site.categories %}
+      {
+        "title"   : "{{category[0] | escape}}",
+        "url"     : "/categories/#{{category[0]}}"
+      }
+      {% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  ]
+}

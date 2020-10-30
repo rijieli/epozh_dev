@@ -1,0 +1,30 @@
+---
+layout: default
+title: 搜索
+permalink: /search/
+---
+
+<div class="wrapper">
+    <div class="global-search-bar">
+        <form class="global-search-form" onsubmit="return false;" novalidate="novalidate">
+            <input class="global-search-input" placeholder="搜索" required="required" type="text" name="search-input"
+                autocomplete="off" id="global-search-input-field" autofocus>
+        </form>
+        <a class="global-search-clear" id="global-search-clear">
+            <svg width="15px" height="15px" viewBox="0 0 25 25">
+                <g transform="translate(-13.000000, -13.000000)" fill="#b0b0b0">
+                    <polygon id="Path"
+                        points="38 17 29.5 25.5 38 34 34 38 25.5 29.5 17 38 13 34 21.5 25.5 13 17 17 13 25.5 21.5 34 13">
+                    </polygon>
+                </g>
+            </svg></a>
+        <span class="global-search-icon" id="global-search-icon">
+            <svg width="25" height="25" viewBox="0 0 25 25" fill="#828282">
+                <path
+                    d="M20.07 18.93l-4.16-4.15a6 6 0 1 0-.88.88l4.15 4.16a.62.62 0 1 0 .89-.89zM6.5 11a4.75 4.75 0 1 1 9.5 0 4.75 4.75 0 0 1-9.5 0z">
+                </path>
+            </svg>
+        </span>
+    </div>
+    <div class="global-search-result" id="global-search-result"></div>
+</div>

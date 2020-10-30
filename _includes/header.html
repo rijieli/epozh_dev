@@ -25,6 +25,9 @@
       </span>
     </label>
     <div class="trigger">
+      <div class="nav-search">
+        {% include search_bar.html %}
+      </div>
       {% assign header_index = 1 %}
       {%- for path in page_paths -%}
       {%- assign my_page = site.pages | where: "path", path | first -%}
