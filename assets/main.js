@@ -33,6 +33,19 @@
         }
     }
 
+    function parseQueryParameter() {
+        let queryString = window.location.search;
+        if (queryString.startsWith("?")) queryString = queryString.slice(1);
+        let result = {};
+        queryString.split("&").forEach(elm => {
+            let element = elm.split("=");
+            let queryValue = element[1].replaceAll("+", " ");
+            queryValue = decodeURIComponent(queryValue).trim();
+            result[decodeURIComponent(element[0])] = queryValue;
+        })
+        return result;
+    }
+
     // 获取初始文档
     function fetchSitemap() {
         if (this.status != 200) {
@@ -46,16 +59,29 @@
         siteMapData = JSON.parse(this.responseText);
     }
 
+    function matchPattern(keyword, item) {
+        let result = false;
+        // Not Safe
+        // if(item.search(new RegExp(keyword, "i")) != -1) result = true;
+        if (item.toLowerCase().indexOf(keyword.toLowerCase()) != -1) result = true;
+
+        return result;
+    }
+
     function processData(keyword, resultNode, resultLimit) {
 
         let result = {};
+        let resultCount = 0;
+
+        keyword = keyword.trim();
 
         for (let category in siteMapData) {
             result[category] = [];
             if (siteMapData[category].length > 0) {
                 siteMapData[category].forEach(item => {
-                    if (item["title"].search(new RegExp(keyword, "i")) != -1) {
+                    if (matchPattern(keyword, item["title"])) {
                         result[category].push(item);
+                        resultCount++;
                     }
                 })
             }
@@ -127,21 +153,33 @@
         if (KEYWORD.length > 0) processData(KEYWORD, globalSearchResultDomNode, -1);
     }
 
-    let searchInputHander = debounce(searchInput, 300);
-    let globalSearchInputHander = debounce(globalSearchInput, 300);
+    function initSearchComponent() {
 
-    searchInputField.addEventListener("input", searchInputHander);
-    if (globalSearchInputField) globalSearchInputField.addEventListener("input", globalSearchInputHander);
-    if (globalSearchClearButton) globalSearchClearButton.addEventListener("click", e => {
-        globalSearchInputField.value = "";
-    })
+        let searchInputHander = debounce(searchInput, 300);
+        let globalSearchInputHander = debounce(globalSearchInput, 300);
 
-    document.body.addEventListener("click", () => {
-        searchResultDomNode.classList.add("hidden");
-    })
+        searchInputField.addEventListener("input", searchInputHander);
+        if (globalSearchInputField) globalSearchInputField.addEventListener("input", globalSearchInputHander);
+        if (globalSearchClearButton) globalSearchClearButton.addEventListener("click", e => {
+            globalSearchInputField.value = "";
+        })
+
+        document.body.addEventListener("click", () => {
+            searchResultDomNode.classList.add("hidden");
+        });
+
+        if (globalSearchInputField) {
+            let queryString = parseQueryParameter();
+            if (queryString["q"]) {
+                globalSearchInputField.value = queryString["q"];
+                processData(queryString["q"], globalSearchResultDomNode, -1);
+            }
+        }
+    }
 
     var oReq = new XMLHttpRequest();
     oReq.addEventListener("load", fetchSitemap);
+    oReq.addEventListener("loadend", initSearchComponent);
     oReq.open("GET", "/sitemap.json");
     oReq.send();
 })()
