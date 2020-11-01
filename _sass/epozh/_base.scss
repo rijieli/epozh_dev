@@ -22,7 +22,7 @@ body {
      -moz-font-feature-settings: "kern" 1;
        -o-font-feature-settings: "kern" 1;
           font-feature-settings: "kern" 1;
-  // -webkit-font-smoothing: antialiased; 
+  -webkit-font-smoothing: antialiased;
   font-kerning: normal;
   display: flex;
   min-height: 100vh;

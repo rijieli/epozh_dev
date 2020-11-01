@@ -170,7 +170,6 @@
 .trigger {
   float: right;
   font-size: 15px;
-  -webkit-font-smoothing: antialiased;
   z-index: 2;
   display: flex;
 
@@ -259,7 +258,6 @@
     left: 0;
     right: 0;
     padding: 10px 30px;
-    -webkit-font-smoothing: antialiased;
 
     .page-link {
       display: block;
