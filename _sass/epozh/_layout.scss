@@ -176,7 +176,7 @@
 
   .page-link {
     color: $grey-color;
-    font-weight: 500;
+    font-weight: $heavy-font-weight;
     display: inline-block;
     line-height: 54px;
     margin-right: 20px;
@@ -205,7 +205,7 @@
     display: none;
   
     h3 {
-      font-weight: 500;
+      font-weight: $heavy-font-weight;
       color: $link-color;
       font-size: 16px;
     }
@@ -435,7 +435,7 @@
       align-items: center;
       border-bottom: 1px solid;
       border-bottom: 1px solid $border-grey;
-      font-weight: 500;
+      font-weight: $heavy-font-weight;
       margin-bottom: 10px;
       margin-top: 5px;
       padding-bottom: 5px;
@@ -468,7 +468,7 @@
     h3 {
       font-size: inherit;
       margin: 0;
-      font-weight: 500;
+      font-weight: $heavy-font-weight;
     }
   }
 
@@ -593,7 +593,7 @@
     display: block;
     font-size: 16px; 
     color: $title-color; 
-    font-weight: 500;
+    font-weight: $heavy-font-weight;
     word-break: break-all;
   }
 
@@ -964,7 +964,7 @@
     padding: 4px 14px;
     border-radius: 20px;
     color: $title-color;
-    font-weight: 500;
+    font-weight: $heavy-font-weight;
     text-decoration: none;
     font-size: 14px;
     align-items: center;
@@ -1009,7 +1009,7 @@
 
       a {
         color: $title-color;
-        font-weight: 500;
+        font-weight: $heavy-font-weight;
         text-decoration: none;
       }
 
