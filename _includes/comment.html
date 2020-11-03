@@ -1,0 +1,119 @@
+<style>
+    .comment {
+        font-size: 16px;
+    }
+
+    .comment-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .comment-form {
+        padding: 10px;
+        border: 1px #828282 solid;
+        margin-bottom: 10px;
+    }
+
+    .comment-input {
+        display: block;
+        width: 100%;
+        resize: none;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        font-family: inherit;
+    }
+
+    .comment-meta-input {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .comment-list {
+        list-style: none;
+        margin-left: 0px;
+    }
+
+    .comment-list-item {
+        border-bottom: 1px #828282 solid;
+    }
+
+    .comment-content {
+        margin-bottom: 5px;
+    }
+
+    .comment-meta {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .comment-uinfo-display {
+        display: flex;
+    }
+
+    .comment-uinfo-display .comment-avatar {
+        border-radius: 50px;
+        height: 22px;
+        width: 22px;
+    }
+
+    
+</style>
+
+<section class="post comment">
+    <div class="comment-title">
+        <div class="comment-title-text">
+            评论
+        </div>
+        <div class="comment-title-notice">
+            友好发言，准确提问。邮箱非公开，仅用于获取回复通知
+        </div>
+    </div>
+    <div class="comment-form">
+        <textarea class="comment-input" type="text" name="comment" id="comment-input" rows="4"></textarea>
+        <div class="comment-meta-input">
+            <div class="comment-uinfo-input">
+                <label for="name-input-id">昵称</label><input type="text" class="comment-name-input" id="name-input-id"
+                    required>
+                <label for="email-input-id">邮箱</label><input type="email" class="comment-email-input"
+                    id="email-input-id" required>
+            </div>
+            <input type="submit" value="提交">
+        </div>
+    </div>
+    <hr>
+    <ul class="comment-list">
+        <li class="comment-list-item">
+            <p class="comment-content">
+                Ab nihil omnis quod ipsam dolores voluptatem fuga itaque. Ducimus recusandae voluptatem optio. Enim et
+                atque quis id molestiae. Aut aliquam nihil nulla. Maiores maxime sequi nemo officiis enim quia
+                voluptatum molestias facere.
+            </p>
+            <div class="comment-meta">
+                <div class="comment-uinfo-display">
+                    <img src="https://www.gravatar.com/avatar/73434f52f81886734def4d810ab7e1d3" alt="Gravatar"
+                        class="comment-avatar">
+                    <div class="comment-uname">Opi Watihana</div>
+                    <div class="comment-date">2020-10-25 22:12</div>
+                </div>
+                <a href="" class="comment-reply">
+                    <span>
+                        <svg width="20px" height="17px" viewBox="0 0 20 17">
+                            <g transform="translate(-629.000000, -76.000000)" fill="#828282" fill-rule="nonzero">
+                                <g transform="translate(0.000000, 72.040268)">
+                                    <g transform="translate(629.000000, 1.000000)">
+                                        <path
+                                            d="M7.65352978,7.32209362 L7.65352978,3 L0,10.5638664 L7.65352978,18.1277329 L7.65352978,13.6970399 C13.1208054,13.6970399 16.9471602,15.4257152 19.6812081,19.2080537 C18.588081,13.8048288 15.3078796,8.40241442 7.65352978,7.32128318 L7.65352978,7.32209362 Z"
+                                            id="Path"></path>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </span>回复
+                </a>
+            </div>
+        </li>
+    </ul>
+</section>
