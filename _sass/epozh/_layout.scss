@@ -1091,11 +1091,17 @@
   }
 
   li:not(:last-child) {
-    margin-bottom: 16px;
+    margin-bottom: 18px;
+  }
+
+  img {
+    height: 24px;
+    margin-right: 10px;
   }
 }
 
-.about-sns-list img {
-  height: 30px;
-  margin-right: 10px;
+@include media-query($on-palm) {
+  .about-content {
+    padding: 5%;
+  }
 }
