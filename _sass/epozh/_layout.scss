@@ -3,28 +3,34 @@
  */
 
 .index-page {
-  background: rgb(6, 59, 165);
-  background-image: linear-gradient(0deg, #00c6fb 0%, #005bea 100%);
-  
+  // background: rgb(212, 218, 230);
+  // background-image: linear-gradient(0deg, #00c6fb 0%, #005bea 100%);
+  position: relative;  
   padding:0px; 
   margin:0px;
   overflow: hidden;
+  height: 100vh;
 
   .index-icon {
-    position: fixed;
+    position: absolute;
     left: 0;
     right: 0;
     margin: 0 20%;
     top: 25%;
     text-align: center;
+
+    img {
+      height: 100px;
+    }
+
   }
 
   .sns-list {
     line-height: 60px;
     height: 88px;
-    background: rgba(255, 255, 255, 0.30);
+    background:$brand-color;
     border-radius: 43.5px;
-    position: fixed;
+    position: absolute;
     left: 0;
     right: 0;
     margin: 0 20%;
@@ -1059,4 +1065,37 @@
   margin-top: -4rem;
   pointer-events: none;
   visibility: hidden;
+}
+
+.about-content p {
+  color: $grey-color-dark;
+}
+
+.about-sns-list {
+  list-style: none;
+  background: $brand-color;
+  margin: 0;
+  padding: 20px;
+  font-weight: bold;
+  
+
+  a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: #fff;
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.about-sns-list img {
+  height: 30px;
+  margin-right: 10px;
 }

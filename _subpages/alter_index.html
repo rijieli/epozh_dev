@@ -1,15 +1,17 @@
 ---
-title: 主页
-permlink: /epozh/
+layout: default
+title: 关于
+permalink: /alterindex/
+header_index: 4
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-{%- include head.html -%}
+<script>
+    document.querySelector("#header_idx_{{page.header_index}}").classList.add("current");
+</script>
 
-<body class="index-page">
+<div class="index-page">
     <div class="index-icon">
-        <img src="{{ "/assets/img/epozh.svg" | relative_url }}" alt="">
+        <img src="{{ "/assets/img/site-icon.svg" | relative_url }}" alt="">
     </div>
     <ul class="sns-list">
         {% for platform in site.data.works_category %}
@@ -28,10 +30,4 @@ permlink: /epozh/
         {% endif %}
         {% endfor %}
     </ul>
-    <div class="footer">
-        <p>Copyright © 2017-2020
-            RIJIE.</p>
-    </div>
-</body>
-
-</html>
+</div>
