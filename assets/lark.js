@@ -1,6 +1,8 @@
-window.h5sdk.ready(() => {
+window.h5sdk && window.h5sdk.ready(() => {
 
-    window.h5sdk.biz.navigation.setTitle({ title: "慢一 | 飞书" });
+    if(window.location.pathname == "/") {
+        window.h5sdk.biz.navigation.setTitle({ title: "慢一 | 飞书" });
+    }
 
     window.h5sdk.biz.navigation.setMenu({
         items: [
