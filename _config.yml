@@ -73,6 +73,7 @@ exclude:
   - Gemfile.lock
   - .sass-cache/
   - .jekyll-cache/
+  - README.md
 
 include:
   - _subpages
