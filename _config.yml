@@ -18,11 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: 慢一
+title: Rijie 的主页
 email: rijie.li@outlook.com
 description: 设计、编程、自动化
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://manyibit.cn"
+url: "https://lirijie.com"
 author: RIJIE
 lang: zh_CN
 twitter:
@@ -61,7 +61,7 @@ data_formats:
 header_pages:
   - index.html
   # - _subpages/works.html
-  # - _subpages/projects.html
+  - _subpages/projects.html
   - _subpages/about.html
 
 exclude:
