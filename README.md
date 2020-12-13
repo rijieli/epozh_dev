@@ -1,4 +1,4 @@
-# Manyi
+# 日杰的主页
 
 Check GitHub Pages Dependency versions:
 

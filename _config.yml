@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Rijie 的主页
+title: 日杰的主页
 email: rijie.li@outlook.com
 description: 设计、编程、自动化
 baseurl: "" # the subpath of your site, e.g. /blog
