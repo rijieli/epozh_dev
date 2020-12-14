@@ -171,6 +171,21 @@
   height: 54px;
   align-items: center;
   text-decoration: none;
+
+  .icon-font {
+    margin:0; 
+    font-weight: bolder;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: $brand-color
+  }
+
+  &:visited {
+    color: $brand-color
+  }
+
 }
 
 .trigger {
