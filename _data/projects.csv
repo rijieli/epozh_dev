@@ -1,6 +1,6 @@
 id,title,desc,img_path,url,platform,lang,date,visit
 1,Jekyll Image Set,Jekyll 图像插件，获取一篇文章的图像集合，纯 Liquid 方式编写，适用于文章列表等。Jekyll 图像插件，获取一篇文章的图像集合，纯 Liquid 方式编写，适用于文章列表等。,/assets/img/projects/imageset.jpg,https://github.com/rijieli/jekyll-image-set,weibo,Liquid,2019/1/1,1234
-2,lirijie.com,日杰的主页，采用 Jekyll 创建，托管于 GitHub Pages。,/assets/img/projects/lirijie.jpg,https://github.com/rijieli/rijieli.github.io,github,HTML,2019/1/2,2048
+2,Homepage,日杰的主页，采用 Jekyll 创建，托管于 GitHub Pages。,/assets/img/projects/lirijie.jpg,https://github.com/rijieli/rijieli.github.io,github,HTML,2019/1/2,2048
 3,iOS URL Scheme,iOS 快捷指令辅助工具。自动解析 IPA 文件中的 URL Scheme，支持批量操作。,/assets/img/projects/iosurlschemes.jpg,https://github.com/rijieli/ios-url-scheme,github,Python,2019/1/4,3676
 4,Bookmark Duplicate Finder,Chrome 插件，搜索重复的书签，并根据一定的规则进行合并。,/assets/img/projects/duplicate-cleaner.jpg,https://github.com/rijieli/chrome-bookmark-cleaner,weixin,JavaScript,2019/1/3,2862
 5,商店自动运营脚本,商店详情图获取，自动切图，自动更换水印，合并单一图像，自动适配淘宝与有赞商城。,/assets/img/projects/lizhiscript.jpg,https://github.com/rijieli/lizhiscript,github,Python,,
