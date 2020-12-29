@@ -7,7 +7,7 @@
   border-radius: 6px;
 
   .highlighter-rouge & {
-    background: #f6f8fa;
+    background: $code-background-color;
   }
 
   .c     { color: #998; font-style: italic } // Comment

@@ -6,6 +6,7 @@ $base-font-family: -apple-system, PingFang SC, BlinkMacSystemFont, "Segoe UI", R
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $post-font-color: #1e1f1e !default;
+$post-font-color-darkmode: #eee !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $monospace-font-family: SF Mono,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
 $base-line-height: 1.5 !default;
@@ -15,22 +16,39 @@ $spacing-unit:     30px !default;
 
 $title-color: #323234 !default;
 $text-color:       #111 !default;
+$text-color-darkmode: #f0f6fc !default;
 $excerpt-color: #878686 !default;
 $background-color: #fff !default;
+$background-color-darkmode: #0d0f13 !default;
+
 $background-grey: #f8f8f8 !default;
+$background-grey-darkmode: #14161C !default;
 
-$link-color: #3D3D3D !default;
+$code-background-color: #f6f8fa !default;
+$code-background-color-darkmode: rgb(22, 27, 34) !default;
+$code-color: #24292e !default;
+$code-color-darkmode: rgb(201, 209, 217) !default;
 
-$brand-color:      #2B65D9 !default;
-$brand-color-light: lighten($brand-color, 46%) !default;
+$link-color: rgb(21, 113, 219) !default;
+$link-color-darkmode: rgb(88, 166, 255) !default;
+
+$blockquote-color: #737873 !default;
+$blockquote-color-darkmode: rgb(139, 148, 158) !default;
+
+// $brand-color:      #2B65D9 !default;
+$brand-color:      #111 !default;
+$brand-color-darkmode: #eee !default;
+$brand-color-light: lighten(#2B65D9, 46%) !default;
 $brand-color-dark:  darken($brand-color, 25%) !default;
 
 $border-grey:      #e8e8e8 !default;
+$border-grey-darkmode: #21262d !default;
 
 $grey-color:       #828282 !default;
 $grey-color-lighter: lighten($grey-color, 15%) !default;
 $grey-color-light: lighten($grey-color, 25%) !default;
-$grey-color-dark:  darken($grey-color, 25%) !default;
+$grey-darken:  #424242 !default;
+$grey-darken-darkmode:  #aaaaaa !default;
 
 $table-text-align: left !default;
 
@@ -66,5 +84,6 @@ $on-laptop:        1080px !default;
   "epozh/projects",
   "epozh/toc-sidebar",
   "epozh/pagination",
-  "epozh/global-search"
+  "epozh/global-search",
+  "epozh/dark-mode"
 ;

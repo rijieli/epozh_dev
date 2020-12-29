@@ -1,0 +1,263 @@
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background-color: $background-color-darkmode;
+        color: $text-color-darkmode;
+    }
+
+    a {
+        color: $link-color-darkmode;
+    }
+
+    a:hover {
+        color: $link-color-darkmode;
+    }
+
+    .item-link {
+        color: $text-color-darkmode !important;
+    }
+
+    .site-header {
+        background-color: $background-grey-darkmode;
+        color: $text-color-darkmode;
+        border-bottom: none;
+
+        .page-link {
+            color: $grey-darken-darkmode !important;
+        }
+
+        .page-link.current {
+            color: $brand-color-darkmode !important;
+        }
+
+        .page-link:hover {
+            color: $brand-color-darkmode;
+        }
+
+        .icon-font {
+            color: $text-color-darkmode;
+        }
+    }
+
+    .post-list {
+        .list-item {
+            border-bottom: 1px solid $border-grey-darkmode;
+        }
+    }
+
+    .sidebar {
+
+        background-color: $background-color-darkmode;
+        color: $text-color-darkmode;
+
+        .sidebar-category {
+            border-right: 1px solid $border-grey-darkmode;
+        }
+
+        .sidebar-category .category-item {
+            color: $text-color-darkmode;
+        }
+
+        .category-item-link.current {
+            color: $text-color-darkmode !important;
+        }
+
+        .category-item-link:hover {
+            color: $text-color-darkmode !important;
+        }
+    }
+    
+    .footer {
+        background-color: $background-grey-darkmode;
+        color: $text-color-darkmode;
+    }
+
+    .post-content p {
+        color: $text-color-darkmode;
+    }
+
+    .comment-hr {
+        border: 1px solid $border-grey-darkmode;
+    }
+    
+    #site-logo {
+        fill: $brand-color-darkmode
+    }
+
+
+    code {
+        background-color: $code-background-color-darkmode;
+        color: $code-color-darkmode;
+    }
+
+    .highlighter-rouge .highlight {
+        background-color: $code-background-color-darkmode;
+    }
+
+    blockquote p{
+        color: $blockquote-color-darkmode !important;
+    };
+
+    .post-meta {
+        color: $grey-darken-darkmode;
+    }
+
+    .post-back-button {
+        color: $grey-darken-darkmode !important;
+
+        &:hover {
+            color: $grey-darken-darkmode !important;
+        }
+    }
+
+    #post-back-button-icon {
+        stroke: $grey-darken-darkmode;
+    }
+
+    .toc-sidebar .toc-sidebar-item a {
+        color: $grey-darken-darkmode !important;
+
+        &:hover {
+            background-color: $background-color-darkmode;
+            color: $text-color-darkmode !important;
+        }
+    }
+
+    .category-section-header h2 {
+        color: $text-color-darkmode;
+    }
+
+    .category-section .category-list .category-list-item a {
+        color: $text-color-darkmode !important;
+    }
+
+    #category-all-category-svg {
+        fill: $text-color-darkmode;
+    }
+
+    .category-group .category-header h2 {
+        color: $text-color-darkmode;
+    }
+
+    #category-title-svg {
+        fill: $text-color-darkmode;
+    }
+
+    .category-tag a {
+        background-color: $background-grey-darkmode;
+        color: $text-color-darkmode !important;
+    }
+
+    .trigger .trigger-tag{
+
+        border-top: 1px solid $border-grey-darkmode;
+
+        h3 {
+            color: $text-color-darkmode;
+        }
+    } 
+
+    #trigger-menu-button-svg {
+        fill: $brand-color-darkmode;
+    }
+
+    .gotop-button {
+        background-color: $background-color-darkmode !important;
+
+        .gotop-svg {
+            fill: $grey-darken-darkmode !important;
+        }
+    }
+
+    .gotop-button:hover {
+        .gotop-svg {
+            fill: $text-color-darkmode !important;
+        }
+    }
+
+    .projects-list{ 
+        
+        .list-item {
+        background-color: $background-grey-darkmode;
+        color: $text-color-darkmode;
+
+            .project-link a{
+                color: $text-color-darkmode !important;           
+            }
+        }
+
+        .project-header {
+            border-bottom: 1px solid $border-grey-darkmode;
+        }
+
+        .project-button{
+            background-color: $background-color-darkmode;
+            a{
+                color: $text-color-darkmode; 
+            }
+        }
+    }
+
+    .about-sns-list {
+        background-color: $background-grey-darkmode;
+    }
+
+    .about-content p {
+        color: $text-color-darkmode;
+    }
+
+    .search {
+
+        .search-input {
+            background: none;
+            color: $text-color-darkmode;
+        }
+
+        .search-result {
+            background-color: $background-grey-darkmode;
+            color: $text-color-darkmode;
+            border: 1px solid $border-grey-darkmode;
+            box-shadow: none;
+
+            li a {
+                color: $text-color-darkmode;
+
+                &:hover {
+                    color: $text-color-darkmode;
+                }
+            }
+        }
+
+        .search-result-title {
+
+            border-bottom: 1px solid $border-grey-darkmode;
+
+            a {
+                color: $text-color-darkmode !important;
+            }
+        }
+
+        .search-result::after {
+            background: $background-grey-darkmode;
+        }
+        
+    }
+
+    .global-search-bar {
+        background-color: $background-grey-darkmode;
+        .global-search-input {
+            color: $text-color-darkmode;
+        }
+    }
+
+    .global-search-result {
+        .search-list-item {
+            a {
+                color: $text-color-darkmode;
+
+                &:hover {
+                    color: $text-color-darkmode;
+                }
+            }
+        }
+    }
+}

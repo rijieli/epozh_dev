@@ -144,7 +144,7 @@
  * Site header
  */
 .site-header {
-  // border-top: 5px solid $grey-color-dark;
+  // border-top: 5px solid $grey-darken;
   border-bottom: 1px solid $border-grey;
   min-height: 54px;
 
@@ -214,6 +214,10 @@
     }
   }
 
+  .page-link:hover {
+    color: $brand-color;
+  }
+
   .page-link.current {
     color: $brand-color;
     // border-bottom: 3px solid $brand-color;
@@ -227,7 +231,7 @@
   
     h3 {
       font-weight: $heavy-font-weight;
-      color: $link-color;
+      color: $text-color;
       font-size: 16px;
     }
   
@@ -318,7 +322,7 @@
     text-align: center;
 
     > svg {
-      fill: $grey-color-dark;
+      fill: $grey-darken;
     }
   }
 
@@ -453,12 +457,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid;
       border-bottom: 1px solid $border-grey;
       font-weight: $heavy-font-weight;
       margin-bottom: 10px;
       margin-top: 5px;
       padding-bottom: 5px;
+      color: $brand-color;
 
       a {
         text-decoration: none;
@@ -477,7 +481,7 @@
     }
 
     li a {
-      color: $grey-color-dark;
+      color: $grey-darken;
       text-decoration: none;
     }
 
@@ -542,7 +546,7 @@
     }
 
     a {
-      color: $grey-color-dark;
+      color: $grey-darken-darkmode;
     }
   }
 
@@ -612,13 +616,9 @@
   .item-link {
     display: block;
     font-size: 16px; 
-    color: $title-color; 
+    color: $brand-color; 
     font-weight: $heavy-font-weight;
     word-break: break-all;
-  }
-
-  .item-link:visited {
-    color: $title-color;
   }
   
   .item-link:hover {
@@ -708,7 +708,7 @@
 }
 
 .post-meta {
-  color: $grey-color-dark;
+  color: $grey-darken;
   font-size: 15px;
 
   .post-meta-date,.post-meta-author {
@@ -717,15 +717,6 @@
 
   .post-meta-cate {
     display: inline;
-    
-    a {
-      color: $grey-color-dark;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: $brand-color;
-    }
   }
 
 }
@@ -754,7 +745,7 @@
   margin-bottom: $spacing-unit;
 
   p {
-    color: $post-font-color;
+    color: $text-color;
     line-height: 32px;
     margin-bottom: 20px;
     word-break: normal;
@@ -762,7 +753,7 @@
   }
 
   blockquote p{
-    color: #737873;
+    color: $blockquote-color;
   };
 
   img {
@@ -820,7 +811,7 @@
     display: block; 
     width: 40px; 
     height: 40px; 
-    background-color: #fff;
+    background-color: $background-color;
     border-radius: 100%; 
     box-shadow: 0 1px 3px rgba(18,18,18,.2); 
     display: flex; 
@@ -893,7 +884,6 @@
     .category-header {
       margin: 10px 0px; 
       padding: 0px 15px;
-      color: $title-color;
       font-weight: bold;
       font-size: 18px;
     }
@@ -906,13 +896,13 @@
       margin: 5px 0px; 
       padding: 4px 15px;
     
-      .category-item-link {
+      a {
         display: block;
+        color: $grey-color;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
         font-size: 14px;
-        color: $link-color;
         letter-spacing: 0.1px;
       }
     }
@@ -1084,7 +1074,7 @@
 }
 
 .about-content p {
-  color: $grey-color-dark;
+  color: $grey-darken;
 }
 
 .about-sns-list {

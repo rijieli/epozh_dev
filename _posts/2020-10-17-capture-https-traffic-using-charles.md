@@ -14,7 +14,7 @@ show_excerpt_image: true
 
 ## TL;DR
 * 安装 Charles 根证书
-* **信任 Charles 根证书**
+* 信任 Charles 根证书
 * 将指定站点加入 Charles SSL 代理清单
 
 ## 安装根证书

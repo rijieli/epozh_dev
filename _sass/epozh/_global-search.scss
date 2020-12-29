@@ -53,6 +53,10 @@
 
     .search-result-title {
         font-size: 16px;
+
+        h3 {
+            font-weight: bolder;
+        }
     }
 
     ul {
@@ -64,7 +68,7 @@
         margin-bottom: 10px;
 
         a {
-            color: $grey-color-dark;
+            color: $grey-darken;
             text-decoration: none;
         }
 
