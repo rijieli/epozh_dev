@@ -260,4 +260,21 @@
             }
         }
     }
+
+    .post-title-wrapper {
+
+        .original-tag {
+          background: $background-grey-darkmode;
+        }
+
+        .tooltip {
+          background: $background-grey-darkmode;
+          box-shadow: 0 1px 3px rgba(18, 18, 18, 0.1);
+        }
+
+        .tooltip::after {
+          border-color: $background-grey-darkmode transparent transparent transparent;
+        }
+
+    }
 }
