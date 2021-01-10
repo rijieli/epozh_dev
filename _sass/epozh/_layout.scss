@@ -744,6 +744,10 @@
 .post-content {
   margin-bottom: $spacing-unit;
 
+  a:visited {
+    color: $link-color;
+  }
+
   p {
     color: $text-color;
     line-height: 32px;
