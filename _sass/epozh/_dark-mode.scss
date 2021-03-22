@@ -277,4 +277,45 @@
         }
 
     }
+
+    .archives-filter {
+        background-color: $background-grey-darkmode;
+        border-top: 1px solid $border-grey-darkmode;
+        box-sizing: border-box;
+
+        a {
+            color: $grey-darken-darkmode;
+        }
+
+        .archives-cate-highlight {
+            color: $brand-color-darkmode;
+        }
+    }
+
+    .archives-list {
+        .list-item {
+            background-color: $background-grey-darkmode;
+        }
+
+        .work-link a {
+            color: $text-color-darkmode;
+
+            &:hover {
+                color: $text-color-darkmode;
+            }
+        }
+    }
+
+    .search .search-result .search-result-title {
+        color: $text-color-darkmode;
+    }
+
+    .search-mobile .search-bar {
+        background-color: $background-color-darkmode;
+        color: $text-color-darkmode;
+    }
+
+    .search-mobile .search-form .search-input {
+        color: $text-color-darkmode;
+    }
 }
