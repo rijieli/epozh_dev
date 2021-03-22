@@ -76,11 +76,11 @@ def create_post(user_input):
 
 
 def generate_site():
-    CATEGORY_CSV_PATH = os.getcwd() + '/_data/works_category.csv'
-    WORKS_SUBPAGE_PATH = os.getcwd() + '/_subpages/works/'
-    WORKS_SUBPAGE_TEMPLATE = os.getcwd() + '/_subpages/works.html'
-    if(not os.path.exists(WORKS_SUBPAGE_PATH)):
-        os.mkdir(WORKS_SUBPAGE_PATH)
+    CATEGORY_CSV_PATH = os.getcwd() + '/_data/archives_category.csv'
+    ARCHIVES_SUBPAGE_PATH = os.getcwd() + '/_subpages/archives/'
+    ARCHIVES_SUBPAGE_TEMPLATE = os.getcwd() + '/_subpages/archives.html'
+    if(not os.path.exists(ARCHIVES_SUBPAGE_PATH)):
+        os.mkdir(ARCHIVES_SUBPAGE_PATH)
 
     categories = []
 
@@ -91,27 +91,29 @@ def generate_site():
 
     categories = categories[1:]
 
-    works_template = ""
+    page_template = ""
 
-    with open(WORKS_SUBPAGE_TEMPLATE) as template_file:
-        works_template = template_file.read()
+    with open(ARCHIVES_SUBPAGE_TEMPLATE) as template_file:
+        page_template = template_file.read()
 
-    replace_anchor = '''title: Works
-permalink: /works/
+# 修改标题时先修改 archives.html 然后修改下方 anchor
+
+    replace_anchor = '''title: 归档
+permalink: /archives/
 current_page_platform: all'''
 
     for category in categories:
-        target_path = WORKS_SUBPAGE_PATH + category[0] + ".html"
+        target_path = ARCHIVES_SUBPAGE_PATH + category[0] + ".html"
 
         front_matter_fragement = '''title: {0}
-permalink: /works/{1}
+permalink: /archives/{1}
 current_page_platform: {2}'''.format(category[1], category[0], category[0])
 
         with open(target_path, 'w') as write_file:
-            write_file.write(works_template.replace(
+            write_file.write(page_template.replace(
                 replace_anchor, front_matter_fragement))
     
-    print("All Works Subpage Generate at: ./_subpages/works/")
+    print("All archives subpage generated at: ./_subpages/archives/")
 
 def modify_post(filepath):
     # Check file format

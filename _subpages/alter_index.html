@@ -14,7 +14,7 @@ header_index: 4
         <img src="{{ "/assets/img/site-icon.svg" | relative_url }}" alt="">
     </div>
     <ul class="sns-list">
-        {% for platform in site.data.works_category %}
+        {% for platform in site.data.archives_category %}
         {% if platform.url != nil and platform.show == 'TRUE' %}
         <li>
             {% if jekyll.environment == "production" %}

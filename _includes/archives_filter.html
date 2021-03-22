@@ -1,0 +1,24 @@
+<div class="archives-filter">
+    {% assign current_page = include.current | default: "all" %}
+
+    {% if current_page == "all" %}
+        {% assign highlight_class = "archives-cate-highlight" %}
+    {% endif %}
+
+    <ul class="archives-filter-list" >
+        <li class="archives-filter-item">
+            <a class="{{highlight_class}}" href="/archives/">所有</a>
+        </li>
+        {% assign work_platforms =  site.data.archives | map: "platform" | compact | uniq %}
+        {% for platform in work_platforms %}
+        {% assign platform_detail = site.data.archives_category | where: "platform",platform | first %}
+        <li class="archives-filter-item">
+            {% if platform == current_page %}
+            <a class="archives-cate-highlight" href="/archives/{{platform}}">{{ platform_detail.name }}</a>
+            {% else %}
+            <a href="/archives/{{platform}}">{{ platform_detail.name }}</a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>

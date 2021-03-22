@@ -13,10 +13,10 @@
     {% endfor %}
   ],
   "Work": [
-    {% for work in site.data.works %}
+    {% for work in site.data.archives %}
       {
         "title"   : "{{work.title | escape}}",
-        "url"     : "/works#workitem-{{work.id}}"
+        "url"     : "/archives#workitem-{{work.id}}"
       }
       {% unless forloop.last %}, {% endunless %}
     {% endfor %}

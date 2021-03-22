@@ -79,7 +79,7 @@ def get_image(img_url, row):
     if not img_url.startswith("http"):
         img_url += "http://"
 
-    target_path = "./assets/img/works/posts/" + \
+    target_path = "./assets/img/archives/posts/" + \
         "{id}.jpeg".format(id=row["url"][-6:])
 
     r = requests.get(img_url)
@@ -106,7 +106,7 @@ def get_info(row: OrderedDict):
     row.update(matched_meta_info)
 
     # Add local image path
-    row["img_path"] = "/assets/img/works/posts/" + \
+    row["img_path"] = "/assets/img/archives/posts/" + \
         "{id}.jpeg".format(id=row["url"][-6:])
 
     print("解析成功：#" + row["id"] + " " + row["title"])
@@ -126,7 +126,7 @@ def write_csv():
 
     row_idx = 0
 
-    with open("./_data/works.csv", 'r') as csv_file:
+    with open("./_data/archives.csv", 'r') as csv_file:
         creader = csv.DictReader(csv_file)
         csv_updated = csv_updated + ",".join(creader.fieldnames) + "\n"
         for row in creader:
@@ -146,7 +146,7 @@ def write_csv():
 
     csv_updated = csv_updated[:-1]
 
-    with open("./_data/works.csv", 'w') as csv_file:
+    with open("./_data/archives.csv", 'w') as csv_file:
         csv_file.write(csv_updated)
 
 

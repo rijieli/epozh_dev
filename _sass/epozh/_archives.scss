@@ -1,8 +1,8 @@
 /**
- * Works
+ * Archives
  */
 
-.works-list {
+.archives-list {
     display: block; 
     list-style-type: none;
     margin: 0px;
@@ -155,7 +155,7 @@
     }
 }
   
-.works-filter {
+.archives-filter {
     position: fixed;
     top: 54px;
     left: 0;
@@ -172,18 +172,18 @@
         text-decoration: none;
     }
 
-    .works-cate-highlight {
+    .archives-cate-highlight {
         color: $link-color;
         font-weight: bold;
     }
 
-    .works-filter-list {
+    .archives-filter-list {
         display: inline; 
         line-height: 60px; 
         margin: 0;
     }
 
-    .works-filter-item {
+    .archives-filter-item {
         list-style: none; 
         display: inline; 
         margin-right: 10px; 
@@ -191,15 +191,15 @@
         text-align: center;
     }
 
-    .works-filter-item:last-child {
+    .archives-filter-item:last-child {
         margin-right: 0px;
     }
 }
 
 @include media-query($on-palm) {
-    .works-filter {
+    .archives-filter {
         height: 50px;
-        .works-filter-list {
+        .archives-filter-list {
             line-height: 50px;
         }
     }

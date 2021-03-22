@@ -5,4 +5,4 @@ id,title,desc,img_path,url,platform,lang,date,visit
 4,Bookmark Duplicate Finder,Chrome 插件，搜索重复的书签，并根据一定的规则进行合并。,/assets/img/projects/duplicate-cleaner.jpg,https://github.com/rijieli/chrome-bookmark-cleaner,weixin,JavaScript,2019/1/3,2862
 5,商店自动运营脚本,商店详情图获取，自动切图，自动更换水印，合并单一图像，自动适配淘宝与有赞商城。,/assets/img/projects/lizhiscript.jpg,https://github.com/rijieli/lizhiscript,github,Python,,
 6,MD Formater,一份 Markdown 文档转化多个平台。依据自定义规则将 Markdown 文件快速转换为适合头条、知乎及微博头条文章格式。,/assets/img/projects/md-formater.jpg,https://github.com/rijieli/md-formater,weixin,Python,2019/1/7,2862
-7,媒体平台自动化运营,油猴脚本集合，用于获取 App Store 详情，公众号参数，将信息快速格式化，然后作为微博或者公众号文章素材。,/assets/img/works/works-placeholder.jpg,/projects,github,JavaScript,2019/1/6,1239
+7,媒体平台自动化运营,油猴脚本集合，用于获取 App Store 详情，公众号参数，将信息快速格式化，然后作为微博或者公众号文章素材。,/assets/img/archives/works-placeholder.jpg,/projects,github,JavaScript,2019/1/6,1239

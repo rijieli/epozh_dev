@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Works
-permalink: /works/
-current_page_platform: all
+title: 知乎
+permalink: /archives/zhihu
+current_page_platform: zhihu
 header_index: 2
 ---
 
@@ -10,12 +10,12 @@ header_index: 2
     document.querySelector("#header_idx_{{page.header_index}}").classList.add("current");
 </script>
 
-{% include works_filter.html  current=page.current_page_platform %}
+{% include archives_filter.html  current=page.current_page_platform %}
 
 <div class="wrapper">
     <div class="page-content">
-        <ol class="works-list">
-            {% for item in site.data.works %}
+        <ol class="archives-list">
+            {% for item in site.data.archives %}
             {%- if item.platform == page.current_page_platform or page.current_page_platform == "all" -%}
             {% if item.url.size > 0 %}
             {% assign item_url = item.url %}
@@ -39,13 +39,13 @@ header_index: 2
                     <div class="work-link-meta">
                         <div class="work-link-meta-platform">
                             <img src="{{ "/assets/img/sns_icon/"| append: item.platform | append: "-roundC888.svg" | relative_url }}" alt="{{item.platform}}">
-                            {% assign platform_detail = site.data.works_category | where: "platform", item.platform | first %}
+                            {% assign platform_detail = site.data.archives_category | where: "platform", item.platform | first %}
                             <span>{{ platform_detail.name }}</span>
                         </div>
                         
                         {% if item.data_value %}
                         <div class="work-link-meta-visit" title="{{item.data_desc}}">
-                            <img src="{{ "/assets/img/works/works-" | append: item.data_type | append: "-icon.svg" | relative_url }}" alt="{{item.data_type}}">
+                            <img src="{{ "/assets/img/archives/works-" | append: item.data_type | append: "-icon.svg" | relative_url }}" alt="{{item.data_type}}">
                             {% if item.data_value != "hide" %}
                             <span>{{ item.data_value }}</span>
                             {% else %}
