@@ -4,6 +4,7 @@ title: VS Code 配置基本 C/C++ 开发环境[macOS]
 date: 2020-10-25 22:12:19 +0800
 categories: 工具
 show_excerpt_image: true
+hide_post: true
 ---
 
 在了解如何使用 VS Code 编译调试 C/C++ 之前，先了解一下如何在终端里直接编译 C/C++ 文件。

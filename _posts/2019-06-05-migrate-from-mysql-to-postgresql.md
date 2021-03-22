@@ -4,6 +4,7 @@ title: 记录一次从 MySQL 迁移至 PostgreSQL 数据库
 date: 2019-06-05 21:44:17 +0800
 categories: 开发 数据库
 show_excerpt_image: true
+hide_post: true
 ---
 
 首先查找了一些开源项目，采用 mysqldump 导出数据，然后使用该脚本 [MySQL to PostgreSQL Converter](https://github.com/lanyrd/mysql-postgresql-converter) 转换一些换行符，将单引号转换至双引号。然后查看了 StackOverflow 的一些资料：
