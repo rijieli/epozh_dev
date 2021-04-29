@@ -60,7 +60,7 @@ data_formats:
 # show which page on the navbar
 header_pages:
   - index.html
-  - _subpages/archives.html
+  # - _subpages/archives.html
   - _subpages/projects.html
   - _subpages/about.html
 
