@@ -530,10 +530,11 @@
   justify-content: center;
 
   .footer-wrapper {
-    font-size: 14px;
+    font-size: 13px;
     display: flex;
     align-items: center; 
     justify-content: center;
+    color: $grey-darken-darkmode;
     flex-wrap: wrap;
   }
 
