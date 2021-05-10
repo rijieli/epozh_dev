@@ -54,6 +54,7 @@ title: Categories
 
       <ul class="category-list">
         {%- for post in category[1] -%}
+        {%- if post.hide_post != true -%}
         <li>
           <div class="category-list-item">
             {%- assign date_format = site.data_formats.date_format_short | default: "%b %-d, %Y" -%}
@@ -63,6 +64,7 @@ title: Categories
             </a>
           </div>
         </li>
+        {%- endif -%}
         {%- endfor -%}
       </ul>
     </div>

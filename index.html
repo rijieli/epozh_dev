@@ -13,7 +13,9 @@ title: 博客
     <div class="post-list-wrapper">
       {%- if site.posts.size > 0 -%}
       <ul class="post-list">
-        {%- for post in paginator.posts -%}
+        {%- for post in site.posts -%}
+        <!-- Uncoment code below, and uncoment _config.yml to use paginator -->
+        <!-- for post in paginator.posts -->
         {%- if post.hide_post != true -%}
         {%- capture first_img_url -%}
         {% include image_set.html content = post.content %}
