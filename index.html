@@ -14,7 +14,7 @@ title: 博客
       {%- if site.posts.size > 0 -%}
       <ul class="post-list">
         {%- for post in site.posts -%}
-        <!-- Uncoment code below, and uncoment _config.yml to use paginator -->
+        <!-- Uncoment code below, uncoment _config.yml, and include paginator.html to use paginator -->
         <!-- for post in paginator.posts -->
         {%- if post.hide_post != true -%}
         {%- capture first_img_url -%}
@@ -54,8 +54,7 @@ title: 博客
       </ul>
       {%- endif -%}
     </div>
-
-    {% include pagination.html %}
+    <!-- include pagination.html  -->
 
   </div>
 
