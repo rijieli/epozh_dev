@@ -8,8 +8,7 @@ show_excerpt_image: false
 
 > 原文链接：https://spec.commonmark.org/0.29/#appendix-a-parsing-strategy
 
-> 未定翻译或者难以直译内容两端以百分号 % 标注，欢迎反馈 github@rijieli/commonmark-spec-translation
-
+未翻译或者难以直译的内容两端以百分号 % 标注，欢迎反馈：[rijieli/commonmark-spec-translation](https://github.com/rijieli/commonmark-spec-translation)
 
 在本附录中，我们描述了 CommonMark 参考实现中使用的语法分析策略的一些特性。
 
@@ -61,7 +60,7 @@ show_excerpt_image: false
 
 通过四行 Markdown 文本，我们来了解上面的树是如何生成的：
 
-```
+``` markdown
 > Lorem ipsum dolor
 sit amet.
 > - Qui *quodsi iracundia*
@@ -76,7 +75,7 @@ sit amet.
 
 我们文字的第一行
 
-```
+``` markdown
 > Lorem ipsum dolor
 ```
 
@@ -91,7 +90,7 @@ sit amet.
 
 下一行，
 
-```
+``` markdown
 sit amet.
 ```
 
@@ -106,7 +105,7 @@ sit amet.
 
 第三行， 
 
-```
+``` markdown
 > - Qui *quodsi iracundia*
 ```
 
@@ -125,7 +124,7 @@ sit amet.
 
 第四行
 
-```
+``` markdown
 > - aliquando id
 ```
 
