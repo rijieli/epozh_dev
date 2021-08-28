@@ -3,6 +3,9 @@
 
 (function () {
     "use strict";
+
+    /* ============================================================================ */
+    // MARK: Search Methods
     let siteMapData = { "post": [] };
     let searchAPIStatus = 200;
     let searchInputField = document.querySelector("#search-input-field");
@@ -13,7 +16,7 @@
     let globalSearchClearButton = document.querySelector("#global-search-clear");
     let globalSearchResultDomNode = document.querySelector("#global-search-result");
 
-    let categoryMap = { "post": "博客", "work": "工作", "code": "CODE", "category": "分类" };
+    let categoryMap = { "post": "文章", "work": "归档", "code": "CODE", "category": "分类" };
 
     searchIcon.addEventListener("click", toggleSearchInput);
 
@@ -30,7 +33,7 @@
             timeout = setTimeout(function () {
                 func.apply(this, arguments);
             }, wait);
-        }
+        };
     }
 
     function parseQueryParameter() {
@@ -42,7 +45,7 @@
             let queryValue = element[1].replaceAll("+", " ");
             queryValue = decodeURIComponent(queryValue).trim();
             result[decodeURIComponent(element[0])] = queryValue;
-        })
+        });
         return result;
     }
 
@@ -83,7 +86,7 @@
                         result[category].push(item);
                         resultCount++;
                     }
-                })
+                });
             }
         }
 
@@ -97,7 +100,7 @@
 
         searchResult.forEach(domNode => {
             resultNode.appendChild(domNode);
-        })
+        });
     }
 
     function assembleResult(keyword, category, matchedItems, resultLimit) {
@@ -116,13 +119,13 @@
             matchedItems = matchedItems.slice(0, resultLimit);
             let moreResultANode = document.createElement("a");
             moreResultANode.href = "/search?q=" + escape(keyword);
-            moreResultANode.innerText = "MORE";
+            moreResultANode.innerText = "···";
             titleNode.appendChild(moreResultANode);
         }
 
         matchedItems.forEach(item => {
             ulNode.appendChild(generateDom(item["title"], item["url"]));
-        })
+        });
 
         resultGroupDivNode.appendChild(ulNode);
 
@@ -162,7 +165,7 @@
         if (globalSearchInputField) globalSearchInputField.addEventListener("input", globalSearchInputHander);
         if (globalSearchClearButton) globalSearchClearButton.addEventListener("click", e => {
             globalSearchInputField.value = "";
-        })
+        });
 
         document.body.addEventListener("click", () => {
             searchResultDomNode.classList.add("hidden");
@@ -177,10 +180,38 @@
         }
     }
 
+    /* ============================================================================ */
+    // MARK: Handle Scroll
+    let lastKnownScrollPosition = 0;
+    let ticking = false;
+
+    function doSomething(scrollPos) {
+        if (scrollPos > 100) {
+            document.getElementById('scroll-to-top-button').style.visibility = "visible";
+        } else {
+            document.getElementById('scroll-to-top-button').style.visibility = "hidden";
+        }
+    }
+
+    document.addEventListener('scroll', function (e) {
+        lastKnownScrollPosition = window.scrollY;
+
+        if (!ticking) {
+            window.requestAnimationFrame(function () {
+                doSomething(lastKnownScrollPosition);
+                ticking = false;
+            });
+
+            ticking = true;
+        }
+    });
+
+    /* ============================================================================ */
+    // MARK: get search document
     var oReq = new XMLHttpRequest();
     oReq.addEventListener("load", fetchSitemap);
     oReq.addEventListener("loadend", initSearchComponent);
     oReq.open("GET", "/sitemap.json");
     oReq.send();
-})()
+})();
 

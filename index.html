@@ -9,76 +9,52 @@ title: 博客
 </script>
 
 <div class="wrapper">
-  <div class="post">
-    <div class="post-list-wrapper">
-      {%- if site.posts.size > 0 -%}
-      <ul class="post-list">
-        {%- for post in site.posts -%}
-        <!-- Uncoment code below, uncoment _config.yml, and include paginator.html to use paginator -->
-        <!-- for post in paginator.posts -->
-        {%- if post.hide_post != true -%}
-        {%- capture first_img_url -%}
-        {% include image_set.html content = post.content %}
-        {%- endcapture -%}
-        {% assign first_img_url = first_img_url | strip %}
-        {% if first_img_url.size == 0 or post.show_excerpt_image == false %}
-        {% assign show_except_image = "no-image" %}
-        {% else %}
-        {% assign show_except_image = "with-image" %}
-        {% endif %}
-        <li class="list-item">
-          <div class="list-item-wrapper">
-            <div class="list-item-meta {{show_except_image}}">
-              {%- assign date_format = site.data_formats.date_format | default: "%b %-d, %Y" -%}
-              <p class="item-date">
-                {{ post.date | date: date_format }}</p>
-              <div style="margin:2px 0px; padding: 0px;">
-                <a class="item-link" href="{{ post.url | relative_url }}">
-                  {{ post.title | escape }}
-                </a>
-              </div>
-              <p class="item-excerpt">
-                {{ post.content | strip_html | slice: 0, 200 | strip }}</p>
-            </div>
-            {% if show_except_image == "with-image" %}
-            <a href="{{ post.url | relative_url }}" class="list-item-image"
-              style="display: inline-block; width: 100px; height: 100px;">
-              <img style="height: 100px; line-height: 130px;border-radius: 17px; object-fit:cover;"
-                src="{{first_img_url}}" alt="{{post.title}}" loading="lazy">
-            </a>
-            {% endif %}
-          </div>
-        </li>
-        {%- endif -%}
-        {%- endfor -%}
-      </ul>
-      {%- endif -%}
-    </div>
-    <!-- include pagination.html  -->
-
-  </div>
-
-  <!-- Sidebar of posts list -->
-
-  {% capture sidebar_content %}
-  <div class="sidebar-category">
-    <p class="category-header">分类</p>
-    <ul class="category-list">
-      <li class="category-item"><a class="category-item-link current" href="/categories/">全部</a></li>
-      {% assign category_count = 0 %}
-      {%- for category in site.categories -%}
-      {% if category_count <= 7 %}
-      <li class="category-item"><a class="category-item-link"
-          href="/categories/#{{ category | first | strip}}">{{ category | first | capitalize }}</a></li>
-      {% assign category_count = category_count | plus: 1 %}
+  <div class="content">
+    {%- if site.posts.size > 0 -%}
+    <ul class="post-list">
+      <!-- Uncoment code below, uncoment _config.yml, and include paginator.html to use paginator -->
+      <!-- for post in paginator.posts -->
+      {%- for post in site.posts -%}
+      {%- if post.hide_post != true -%}
+      {%- capture first_img_url -%}
+      {% include image_set.html content = post.content %}
+      {%- endcapture -%}
+      {% assign first_img_url = first_img_url | strip %}
+      {% if first_img_url.size == 0 or post.show_excerpt_image == false %}
+      {% assign show_except_image = "no-image" %}
+      {% else %}
+      {% assign show_except_image = "with-image" %}
       {% endif %}
+      <li class="list-item">
+        <div class="list-item-wrapper">
+          <div class="list-item-meta {{show_except_image}}">
+            {%- assign date_format = site.data_formats.date_format | default: "%b %-d, %Y" -%}
+            <p class="item-date">
+              {{ post.date | date: date_format }}</p>
+            
+            <a class="item-link" href="{{ post.url | relative_url }}">
+              {{ post.title | escape }}
+            </a>
+            
+            <p class="item-excerpt">
+              {{ post.content | strip_html | slice: 0, 200 | strip }}</p>
+          </div>
+          {% if show_except_image == "with-image" %}
+          <a href="{{ post.url | relative_url }}" class="list-item-image"
+            style="display: inline-block; width: 100px; height: 100px;">
+            <img style="height: 100px; line-height: 130px;border-radius: 17px; object-fit:cover;"
+              src="{{first_img_url}}" alt="{{post.title}}" loading="lazy">
+          </a>
+          {% endif %}
+        </div>
+      </li>
+      {%- endif -%}
       {%- endfor -%}
     </ul>
+    {%- endif -%}
+    <!-- include pagination.html  -->
+
+    {% include scroll_to_top.html %}
   </div>
-
-
-  {% endcapture %}
-
-  {%- include sidebar.html sidebar_content=sidebar_content -%}
 
 </div>

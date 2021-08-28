@@ -6,9 +6,13 @@ categories: 开发
 show_excerpt_image: false
 ---
 
-> 原文链接：https://spec.commonmark.org/0.29/#appendix-a-parsing-strategy
+新产品重要的模块依赖 Markdown 语法，在开发过程研究了 cmark 与 tree-sitter 分支的 Markdown 语法分析器，两个都无法满足定制需求，因此自己实现了一遍。实现方法参考了 cmark 文档中的分析策略，并把它简单的翻译了一下。
 
-未翻译或者难以直译的内容两端以百分号 % 标注，欢迎反馈：[rijieli/commonmark-spec-translation](https://github.com/rijieli/commonmark-spec-translation)
+原文链接：[appendix-a-parsing-strategy](https://spec.commonmark.org/0.29/#appendix-a-parsing-strategy)
+
+未翻译或者难以直译的内容两端以百分号 % 标注，[欢迎反馈](https://github.com/rijieli/commonmark-spec-translation)。原文标题层级较为简单，故在翻译过程增加了一些我认为重要的小标题。以下为翻译正文：
+
+
 
 在本附录中，我们描述了 CommonMark 参考实现中使用的语法分析策略的一些特性。
 
@@ -57,6 +61,8 @@ show_excerpt_image: false
 当我们看到段落块中的一行是[[setext heading underline](https://spec.commonmark.org/0.29/#setext-heading-underline)]时，构造一个 Setext 标题块。
 
 当一个段落块被关闭时会解析引用链接定义；分析累积的行以检查它们是否以一个或多个引用链接定义标记开始。任何剩余部分标记为正常段落。
+
+## - 解析案例
 
 通过四行 Markdown 文本，我们来了解上面的树是如何生成的：
 
@@ -172,7 +178,7 @@ document
 
 注意第一个 `paragraph` 中的换行符被解析为 `softbreak`，第一个列表项中的星号变成了一个 `emph` 节点。
 
-### 解析嵌套强调和链接的算法
+## 解析嵌套强调和链接的算法
 
 到目前为止，内联解析最棘手的部分是处理强调、加粗、链接和图像。下面的算法将帮助我们实现这个过程。
 
@@ -196,7 +202,7 @@ document
 
 (译者注：该部分涉及的内联节点均具有两端为分隔符，中间为内容的特点，上文的 opener 和 closer 指代一个内联节点两端的分隔符)
 
-#### *查找链接或图像*
+## - 查找链接或图像
 
 从分隔符堆栈的顶部开始，我们向下查看堆栈寻找一个 opener `[` 或 `![` 分隔符。
 
@@ -218,7 +224,7 @@ document
     
     * 如果我们有一个链接（而不是图像），我们还将 opener 之前的所有 `[` 分隔符设置为 *inactive*。（这将防止我们获得链接内的链接。）
     
-#### *处理强调*
+## - 处理强调
 
 参数 `stack_bottom` 决定了我们在 *分隔符堆栈* 中向下查找的最终位置。如果它是 NULL，我们可以一直搜索堆栈的底部。否则我们会在 `stack_bottom` 之前停止。
 

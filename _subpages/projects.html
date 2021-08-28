@@ -9,7 +9,7 @@ permalink: /projects/
     document.querySelector("#header_idx_{{page.header_index}}").classList.add("current");
 </script>
 
-<div class="wrapper">
+<div class="wrapper-wide">
     <ol class="projects-list">
         {% for item in site.data.projects %}
         {% if item.hide != "1" %}
@@ -32,7 +32,7 @@ permalink: /projects/
                         </div>
                     </div>
                     <div class="project-button">
-                        <a href="{{item.url}}" target="_blank">查看项目</a>
+                        <a href="{{item.url}}" target="_blank">查看</a>
                     </div>
                 </div>
                 <div class="project-description">

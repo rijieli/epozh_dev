@@ -3,17 +3,8 @@
   <div class="wrapper">
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
-      <svg width="30px" height="30px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink">
-        <title>Artboard Copy</title>
-        <g id="Artboard-Copy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <path
-            d="M21,51.5263158 L49.1714286,60.2481203 L49.1714286,79 L21,70.2781955 L21,51.5263158 Z M79,51.5263158 L79,70.2781955 L50.8285714,79 L50.8285714,60.2481203 L79,51.5263158 Z M21,31.0300752 L49.1714286,39.7518797 L49.1714286,58.5037594 L21,49.7819549 L21,31.0300752 Z M79,31.0300752 L79,49.7819549 L50.8285714,58.5037594 L50.8285714,39.7518797 L79,31.0300752 Z M49.5285134,21 L77.5367584,29.7218045 L50.0808943,38.1528822 L22.4632416,29.7218045 L49.5285134,21 Z"
-            id="site-logo" fill="#111111"></path>
-        </g>
-      </svg>
-      <p class="icon-font">日杰的主页</p>
+    <a class="site-title icon-font" rel="author" href="{{ "/" | relative_url }}">
+      <span>@</span>  <span class="icon-font-serif">日杰</span>
     </a>
     <label for="nav-trigger">
       <span class="menu-icon">

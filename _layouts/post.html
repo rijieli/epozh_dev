@@ -7,47 +7,56 @@ layout: default
 <script>
   document.querySelector("#header_idx_{{header_index}}").classList.add("current");
 </script>
+
+{% capture sidebar_content %}
+<!-- <div class="share-sidebar">
+  <button> Share </button>
+</div> -->
+<div>
+  <p class="toc-sidebar-header">目录</p>
+  {%- include toc.html html=content h_min=2 h_max=2 class='toc-sidebar' item_class='toc-sidebar-item' -%}
+</div>
+{% endcapture %}
+{%- include sidebar.html sidebar_content=sidebar_content -%}
+
 <div class="wrapper">
-  <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-    <div class="post-header">
-      <a class="post-back-button" href="javascript:history.back(-1);">
+  <article class="content h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-meta">
+      <a class="post-back-button" href="/">
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" stroke="#000" stroke-width="2"
           class="blog-header__title__icon" id="post-back-button-icon">
           <path fill="none" stroke-linecap="round" stroke-linejoin="round" d="M7 3L4 6l3 3"></path>
         </svg>
         返回
       </a>
-      <div class="post-meta">
-        <time class="post-meta-date" class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"
-          itemprop="datePublished">
-          {{ page.date | date: site.data_formats.date_format_short }}
-        </time>
-        
-        {% if page.author %}
-        <span class="post-meta-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <span class="p-author h-card" itemprop="name">{{ page.author }}</span>
-        </span>
-        {% endif %}
-    
-        {%- if page.categories -%}
-        {% for category in page.categories %}
-        <div class="post-meta-cate">
-          <a href="/categories/#{{category}}">#{{category}}</a>
-        </div>
-        {% endfor %}
-        {%- endif-%}
-      </div>
+      <time class="post-date" class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"
+        itemprop="datePublished">
+        {{ page.date | date: site.data_formats.date_format_short }}
+      </time>
     </div>
 
-    <header class="post-title-wrapper">
-      <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-      {% if page.author %}
-      <div class="original-sign">
-        <div class="original-tag">非</div>
-        <span class="tooltip">非原创</span>
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+
+    <div class="post-meta">
+      {%- if page.categories -%}
+      {% for category in page.categories %}
+      <div class="post-category">
+        &nbsp;<a href="/categories/#{{category}}"> {{category}}</a>&nbsp;&nbsp;/
       </div>
+      {% endfor %}
+      {%- endif-%}
+
+      {% if page.author %}
+      <span class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-author h-card" itemprop="name">by {{ page.author }}</span>
+      </span>
+      {% else %}
+      <span class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-author h-card" itemprop="name">by Roger</span>
+      </span>
       {% endif %}
-    </header>
+    </div>
 
     <div class="post-content e-content" itemprop="articleBody">
       {{ content }}
@@ -56,7 +65,7 @@ layout: default
     <hr class="comment-hr">
 
     {%- include disqus_comments.html -%}
-    
+
 
     <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
   </article>
@@ -64,17 +73,6 @@ layout: default
   {% if site.allow_comment and page.comment %}
   {% include comment.html %}
   {% endif %}
-
-  {% capture sidebar_content %}
-  <!-- <div class="share-sidebar">
-    <button> Share </button>
-  </div> -->
-  <div>
-    <p class="toc-sidebar-header">目录</p>
-    {%- include toc.html html=content h_min=2 h_max=2 class='toc-sidebar' item_class='toc-sidebar-item' -%}
-  </div>
-  {% endcapture %}
-  {%- include sidebar.html sidebar_content=sidebar_content -%}
 
 
   {% include scroll_to_top.html %}
@@ -88,9 +86,16 @@ layout: default
 </div>
 
 <script>
+
+  let toc_item_count = document.querySelectorAll(".toc-sidebar-item").length
+  
+  if(toc_item_count < 2) {
+    document.querySelector("#sidebar").remove()
+  }
+
   let imgDom = document.querySelector(".post-image-viewer");
-  document.querySelectorAll(".post-content img").forEach(e=>e.addEventListener("click", showImage))
-  imgDom.addEventListener("click", e=>imgDom.style.display="none");
+  document.querySelectorAll(".post-content img").forEach(e => e.addEventListener("click", showImage))
+  imgDom.addEventListener("click", e => imgDom.style.display = "none");
 
   function showImage(evt) {
     let imgDomImage = document.querySelector(".post-image-viewer img");

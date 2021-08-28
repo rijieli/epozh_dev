@@ -146,16 +146,12 @@
 .site-header {
   // border-top: 5px solid $grey-darken;
   border-bottom: 1px solid $border-grey;
-  min-height: 54px;
+  min-height: 62px;
 
   // Positioning context for the mobile navigation icon
-  position: fixed;
-  left: 0;
-  right: 0;
   background: #fff;
-  z-index: 9999;
   box-sizing: border-box;
-  height: 54px;
+  height: 62px;
 
   transition: height .56s cubic-bezier(0.52, 0.16, 0.24, 1);
   transition-property: height;
@@ -168,13 +164,18 @@
   margin: 0;
   float: left;
   display: flex;
-  height: 54px;
+  height: 62px;
   align-items: center;
   text-decoration: none;
 
-  .icon-font {
+  &.icon-font {
     margin:0; 
     font-weight: bolder;
+    font-size: 20px;
+  }
+
+  .icon-font-serif {
+    font-family: 'Times New Roman', Georgia, Garamond, Times, serif;
   }
 
   &:hover {
@@ -198,11 +199,11 @@
     color: $grey-color;
     font-weight: $heavy-font-weight;
     display: inline-block;
-    line-height: 54px;
+    line-height: 62px;
     margin-right: 20px;
     
     -webkit-font-smoothing: antialiased;
-    height: 54px;
+    height: 62px;
     box-sizing: border-box;
     padding: 0px 1px;
   
@@ -241,13 +242,13 @@
 
 .menu-icon {
   display: none;
-  line-height: $base-line-height * $base-font-size * 2.25;
+  line-height: 62px;
 }
 
 .nav-search {
   display: inline-block;
-  line-height: 54px;
-  height: 54px;
+  line-height: 62px;
+  height: 62px;
   margin-right: 20px;
   padding: 0px 1px;
 }
@@ -280,7 +281,7 @@
   .trigger {
     flex-direction: column;
     position: absolute;
-    top: 54px;
+    top: 62px;
     left: 0;
     right: 0;
     padding: 10px 30px;
@@ -318,8 +319,8 @@
   .menu-icon {
     display: block;
     float: right;
-    width: 22px;
-    text-align: center;
+    width: 100%;
+    text-align: right;
 
     > svg {
       fill: $grey-darken;
@@ -329,11 +330,10 @@
   input ~ nav .trigger {
     clear: both;
     visibility: hidden;
-    transition: visibility .56s cubic-bezier(0.52, 0.16, 0.24, 1);
+    // transition: visibility .56s cubic-bezier(0.52, 0.16, 0.24, 1);
   }
 
   input:checked ~ nav {
-    height: 100%;
     border: none;
     transition: height .56s cubic-bezier(0.52, 0.16, 0.24, 1);
     transition-property: height;
@@ -345,6 +345,8 @@
   input:checked ~ nav .trigger {
     visibility: visible;
     transition: visibility .56s cubic-bezier(0.52, 0.16, 0.24, 1);
+
+    background-color: $background-color;
 
     .page-link {
       transform: translateY(0);
@@ -442,7 +444,7 @@
 
   .search-result {
     position: absolute;
-    top: 54px;
+    top: 62px;
     left: -35px;
     border-radius: 5px;
     padding: 10px 20px;
@@ -452,6 +454,7 @@
     background: #fff;
     line-height: 26px;
     box-shadow: #b8b8b890 0px 2px 4px;
+    z-index: 999;
 
     .search-result-title {
       display: flex;
@@ -474,10 +477,6 @@
       list-style: none; 
       font-size: 15px;
       margin: 0;
-    }
-
-    li:not(:last-child) {
-      margin-bottom: 3px;
     }
 
     li a {
@@ -563,7 +562,7 @@
 .page-content {
   padding: 0 0 $spacing-unit;
   flex: 1;
-  padding-top: 54px;
+  margin-bottom: 50px;
 }
 
 .page-heading {
@@ -581,12 +580,11 @@
 .post-list {
   margin-left: 0;
   list-style: none;
-  
 
   .list-item {
-    margin: 0;
+    margin: 0px;
+    padding: 10px 0px 10px 0px;
     border-bottom: 1px $border-grey solid;
-    padding: 0px 10px;
 
     .list-item-wrapper {
       margin: 10px 0px; 
@@ -611,7 +609,7 @@
     color: $excerpt-color;
     display: block;
     padding: 0px; 
-    margin: 2px 0px;
+    margin: 0px 0px 4px 0px;
   }
 
   .item-link {
@@ -620,6 +618,7 @@
     color: $brand-color; 
     font-weight: $heavy-font-weight;
     word-break: break-all;
+    margin: 4px 0px;
   }
   
   .item-link:hover {
@@ -635,7 +634,7 @@
     overflow: hidden; 
     white-space: nowrap; 
     text-overflow: ellipsis; 
-    margin: 2px 0px;
+    margin: 4px 0px 0px 0px;
   }
 
   .no-image {
@@ -647,94 +646,49 @@
 
 }
 
-.post-title-wrapper {
-  display: flex;
-  margin-bottom: 15px;
-  
-  .original-sign {
-    position: relative;
-    font-size: 14px;
-  }
-
-  .original-tag {
-    background: $background-grey;
-    font-size: 14px;
-    display: block;
-    border-radius: 4px;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    margin-left: 10px;
-  }
-
-  .original-sign:hover .tooltip {
-    opacity: 1;
-  }
-
-  .tooltip {
-    opacity: 0;
-    position: absolute;
-    left: -15px;
-    top: -35px;
-    width: 69px;
-    height: 31px;
-    line-height: 31px;
-    text-align: center;
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(18, 18, 18, 0.1);
-    transition: opacity 0.5s ease 0s;
-  }
-
-  .tooltip::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -10px;
-    border-width: 10px;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
-  }
-
-}
-
 .post-title {
   @include relative-font-size(1.5);
   letter-spacing: -1px;
   line-height: 1.5;
   font-weight: bold;
-  margin-bottom: 0px;
+  margin: 10px 0px;
   letter-spacing: 0.2px;
 }
 
 .post-meta {
   color: $grey-darken;
   font-size: 15px;
+  padding: 5px 0px 15px 0px;
 
-  .post-meta-date,.post-meta-author {
-    margin-right: 5px;
-  }
-
-  .post-meta-cate {
+  .post-date {
     display: inline;
   }
 
-}
+  .post-author {
+    margin-left: 10px;
+  }
 
-.post-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  .post-category {
+    display: inline;
+
+    a {
+      color: $grey-darken;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+  }
+
 }
 
 .post-back-button {
-  display: block;
+  display: inline;
   color: $post-font-color;
   text-decoration: none;
   line-height: 24px;
   font-weight: bold;
+  margin-right: 20px;
 }
 
 .post-back-button:hover {
@@ -798,15 +752,6 @@
   }
 }
 
-.post-content :not([href])[id]:before {
-  content: " ";
-  display: block;
-  height: 5rem;
-  margin-top: -5rem;
-  pointer-events: none;
-  visibility: hidden;
-}
-
 .post-gotop-button {
   position: fixed; 
   right: 30px; 
@@ -867,13 +812,14 @@
 .sidebar {
   display: block; 
   position: fixed; 
+  left: 5%;
   top: 100px;
-  width: 120px;
+  width: 12%;
   text-overflow: clip;
   
   .sidebar-content {
-  display: flex; 
-  flex-direction: column;
+    display: flex; 
+    flex-direction: column;
   }
 
   @include media-query($on-laptop) {
@@ -1069,19 +1015,6 @@
   }
 }
 
-.category-anchor-float::before {
-  content: " ";
-  display: block;
-  height: 4rem;
-  margin-top: -4rem;
-  pointer-events: none;
-  visibility: hidden;
-}
-
-.about-content p {
-  color: $grey-darken;
-}
-
 .about-sns-list {
   list-style: none;
   background: $brand-color;
@@ -1108,12 +1041,6 @@
   img {
     height: 24px;
     margin-right: 10px;
-  }
-}
-
-@include media-query($on-palm) {
-  .about-content {
-    padding: 5%;
   }
 }
 

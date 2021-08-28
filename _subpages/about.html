@@ -10,13 +10,11 @@ header_index: 4
 </script>
 
 <div class="wrapper">
-    <div class="post about-content">
-        <h1>I'm Roger</h1>
-        <p>前 Price Tag 运营</p>
-        <p>喜欢<span style="text-decoration: underline;">新鲜科技</span>产品</p>
-        <p>喜欢<span style="text-decoration: underline;">设计</span></p>
-        <p>正在创造一些<span style="text-decoration: underline;">可靠的</span>小产品</p>
-        <p>你可以在这些地方找到我</p>
+    <div class="content about">
+        <p>曾经从事建筑施工行业</p>
+        <p>后转互联网运营</p>
+        <p>目前在创造一些<span style="text-decoration: underline;">可靠的</span>小产品</p>
+        <p style="margin-bottom: 30px;">希望这些产品能存活<span style="text-decoration: underline;">数十年</span></p>
         <ul class="about-sns-list">
             {% for platform in site.data.archives_category %}
             {% if platform.url != nil and platform.show == 'TRUE' %}

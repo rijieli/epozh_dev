@@ -32,10 +32,10 @@
         .page-link:hover {
             color: $brand-color-darkmode;
         }
+    }
 
-        .icon-font {
-            color: $text-color-darkmode;
-        }
+    .site-title.icon-font {
+        color: $text-color-darkmode !important;
     }
 
     .post-list {
@@ -45,8 +45,6 @@
     }
 
     .sidebar {
-
-        background-color: $background-color-darkmode;
         color: $text-color-darkmode;
 
         .sidebar-category {
@@ -69,7 +67,7 @@
     .footer {
         background-color: $background-grey-darkmode;
         color: $text-color-darkmode;
-    }
+    } 
 
     .post-content p {
         color: $text-color-darkmode;
@@ -102,9 +100,15 @@
         color: $blockquote-color-darkmode !important;
     };
 
-    .post-meta {
+    .post-meta, .post-date {
         color: $grey-darken-darkmode;
     }
+
+    .post-category {
+        a {
+            color: $grey-darken-darkmode !important;
+        }
+    }   
 
     .post-back-button {
         color: $grey-darken-darkmode !important;
@@ -148,7 +152,7 @@
     }
 
     .category-tag a {
-        background-color: $background-grey-darkmode;
+        background-color: $grey-darken;
         color: $text-color-darkmode !important;
     }
 
@@ -196,6 +200,7 @@
 
         .project-button{
             background-color: $background-color-darkmode;
+            text-align: center;
             a{
                 color: $text-color-darkmode; 
             }
@@ -204,10 +209,6 @@
 
     .about-sns-list {
         background-color: $background-grey-darkmode;
-    }
-
-    .about-content p {
-        color: $text-color-darkmode;
     }
 
     .search {
@@ -224,6 +225,7 @@
             box-shadow: none;
 
             li a {
+                font-size: 13px;
                 color: $text-color-darkmode;
 
                 &:hover {
@@ -258,29 +260,12 @@
         .search-list-item {
             a {
                 color: $text-color-darkmode;
-
+                font-size: 14px;
                 &:hover {
                     color: $text-color-darkmode;
                 }
             }
         }
-    }
-
-    .post-title-wrapper {
-
-        .original-tag {
-          background: $background-grey-darkmode;
-        }
-
-        .tooltip {
-          background: $background-grey-darkmode;
-          box-shadow: 0 1px 3px rgba(18, 18, 18, 0.1);
-        }
-
-        .tooltip::after {
-          border-color: $background-grey-darkmode transparent transparent transparent;
-        }
-
     }
 
     .archives-filter {
@@ -322,5 +307,9 @@
 
     .search-mobile .search-form .search-input {
         color: $text-color-darkmode;
+    }
+
+    input:checked ~ nav .trigger {
+        background-color: $background-grey-darkmode;
     }
 }
