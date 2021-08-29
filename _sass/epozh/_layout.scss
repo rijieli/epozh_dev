@@ -170,12 +170,12 @@
 
   &.icon-font {
     margin:0; 
-    font-weight: bolder;
     font-size: 20px;
   }
 
   .icon-font-serif {
-    font-family: 'Times New Roman', Georgia, Garamond, Times, serif;
+    font-family: serif;
+    font-weight: 800;
   }
 
   &:hover {
