@@ -66,6 +66,9 @@ def create_post(user_input):
     else:
         filepath = os.getcwd() + '/' + filename
 
+    
+    post_image_path = os.getcwd() + '/assets/posts/' + title.lower().replace(" ", "-")
+
     # check if this post exists already, otherwise create and write!
     if(os.path.exists(filepath)):
         print("Looks like this post already exists: " + filepath)
@@ -73,6 +76,9 @@ def create_post(user_input):
         with open(filepath, 'w') as f:
             print(front_matter, file=f)
         print("Post created: ./_posts/" + filename)
+
+    if not os.path.exists(post_image_path):
+        os.mkdir(post_image_path)
 
 
 def generate_site():

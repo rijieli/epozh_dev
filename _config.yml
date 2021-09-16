@@ -59,10 +59,10 @@ data_formats:
 
 # show which page on the navbar
 header_pages:
-  - index.html
+   - index.html
   # - _subpages/archives.html
   # - _subpages/projects.html
-  - _subpages/about.html
+  # - _subpages/about.html
 
 exclude:
   - manage.py
