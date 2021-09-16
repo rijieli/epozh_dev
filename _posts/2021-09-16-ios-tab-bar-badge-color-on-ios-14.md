@@ -44,7 +44,7 @@ self.tabBar.standardAppearance = {
 
 ## 正确配置方式
 
-`tabBar.standardAppearance` 包含 `stackedLayoutAppearance`属性，这里包含 badge 的配吹，可以在定义 Tab Bar 样式时修改该属性。方法如下:
+`tabBar.standardAppearance` 包含 `stackedLayoutAppearance`属性，其中包含了 Badge 的样式，可以在定义 Tab Bar 样式时修改该属性。方法如下:
 
 ```swift
 let customTabItemAppearance = UITabBarItemAppearance()
